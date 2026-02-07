@@ -2,7 +2,7 @@
 
 **Team Name:** 
 
-**Day/Time of Weekly Team Meeting:** 02/07/2026 @ 2:00 pm
+**Day/Time of Weekly Team Meeting:** Every Saturday at 2:00 pm
 
 
 ## Planning Poker Results
