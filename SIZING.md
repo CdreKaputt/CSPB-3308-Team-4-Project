@@ -9,7 +9,7 @@
 
 **Team Members Present:** Joshua Morrison, Spencer Iascone, London Walker, Aaron Brunswig
 
-**Zoom Recording Link:** 
+**Zoom Recording Link:** [https://drive.google.com/file/d/1G7F5mYXtdbbiQEcYztoqLuwhUYOP90v2/view?usp=sharing](https://drive.google.com/file/d/1G7F5mYXtdbbiQEcYztoqLuwhUYOP90v2/view?usp=sharing) 
 
 ---
 ### User Story 2
