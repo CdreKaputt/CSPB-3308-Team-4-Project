@@ -19,13 +19,13 @@
 **So that** : environment-specific settings are easy to change
 
 
-**Effort Level**	: <level of effort : dimensionless units>
+**Effort Level**	: 3
 
 
 **Acceptance Criteria**\
-Given : <contents of action> \
-When  : <some action is completed> \
-Then  : <set of observable outcomes>
+Given : that a config file exist, or that the structure of that file is known (.env, .json, .yaml, etc) \
+When  : the script reads the config file \
+Then  : the current configuration values are displayed.
 
 ---
 ### User Story 8
@@ -35,13 +35,13 @@ Then  : <set of observable outcomes>
 **So that** : users can view only relevant data
 
 
-**Effort Level**	: <level of effort : dimensionless units>
+**Effort Level**	: 3
 
 
 **Acceptance Criteria**\
-Given : <contents of action> \
-When  : <some action is completed> \
-Then  : <set of observable outcomes>
+Given : that a database exists, its structure is known, and we can access the database  \
+When  : a user provides input \
+Then  : data is retrieved from the database, filtered, and displayed to the user
 
 ---
 ### User Story 14
@@ -51,12 +51,12 @@ Then  : <set of observable outcomes>
 **So that** : I can verify core functionality before deployment
 
 
-**Effort Level**	: <level of effort : dimensionless units>
+**Effort Level**	: 5
 
 
 **Acceptance Criteria**\
-Given : <contents of action> \
-When  : <some action is completed> \
-Then  : <set of observable outcomes>
+Given : that the parameters of each function is known as well as the expected output \
+When  : the function is provided and the test script or suite is run \
+Then  : the test results for each unit are displayed showing either a pass or fail.
 
 ---
