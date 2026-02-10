@@ -1,6 +1,6 @@
 **Team Number:** 4
 
-**Team Name:** 
+**Team Name:** Mountain Hackers
 
 **Day/Time of Weekly Team Meeting:** Every Saturday at 2:00 pm
 
@@ -40,7 +40,7 @@ Then  : the current configuration values are displayed.
 
 **Acceptance Criteria**\
 Given : that a database exists, its structure is known, and we can access the database  \
-When  : a user provides input \
+When  : a user provides a search query as input \
 Then  : data is retrieved from the database, filtered, and displayed to the user
 
 ---
