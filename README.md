@@ -54,6 +54,35 @@ member *"Flakes"* on the trip, the application updates that team member's
 assigned responsibilities as "Unassigned," triggering a notification to the 
 remaining team members that there are trip necessaties unaccounted for.
 
+## MVP (The 5 pages)
+1. **Trip Overview:** Countdown timer, location map, attendee list, list of 
+   items that still need to be acquired by/assigned to group members
+   - Nice-to-Have: include group skill level chart so that the trip can be 
+     planned to accommodate all team members (follows second primary 
+     mountaineering rule of "never go at the pace of the fastest team member, 
+     switch up the lead").
+
+2. **The Pack List:** A shared checklist where users can add/remove and 
+   *"claim"* items (ex: Joshua is bringing the stove. London is bringing the 
+   cooler. Aaron is bringing the canoes. Spencer is bringing the tents. etc. | 
+   items needed: food, lighting, sunblock etc.). CRUD
+
+3. **Itinerary:** An editable day-by-day breakdown of the trip plan. CRUD
+   - First created when primary user/group lead creats a trip. 
+
+4. **Cost Splitter:** A simple ledger to track shared expenses (gas, permits, 
+   food etc.). User can update the ledger and see cost per person automatically
+   adjusted. CRUD
+
+5. **Discovery page:** A page to browse public trip templates or past trips. 
+   READ only
+
+6. **Nice-to-Haves:** 
+    - Friends 
+    - Likes  
+    - Star Rating System 
+    - Public Events Page
+
 ## Risks to Project Completion
 
 - *New Technologies:*
