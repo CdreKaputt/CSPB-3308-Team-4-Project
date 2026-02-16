@@ -119,7 +119,7 @@ remaining team members that there are trip necessaties unaccounted for.
     - We will establish a dedicated *git Flow* practice as well as a baseline 
       of what constitutes *"done"* for any given feature (i.e. establish what 
       the MVP of our project looks like.)
-    - We will manage our project timeline and monitor progress throug the use of 
+    - We will manage our project timeline and monitor progress through the use of 
       a Trello board to ensure we are staying on track and ensure all team 
       members are aware of what has been completed and what needs to be worked 
       on. 
