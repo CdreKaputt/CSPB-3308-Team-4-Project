@@ -68,7 +68,7 @@ remaining team members that there are trip necessaties unaccounted for.
    items needed: food, lighting, sunblock etc.). CRUD
 
 3. **Itinerary:** An editable day-by-day breakdown of the trip plan. CRUD
-   - First created when primary user/group lead creats a trip. 
+   - First created when primary user/group lead creates a trip. 
 
 4. **Cost Splitter:** A simple ledger to track shared expenses (gas, permits, 
    food etc.). User can update the ledger and see cost per person automatically
