@@ -176,4 +176,4 @@ Structure:
 
 Project management will be tracked through the use of a Trello board.
 
-**Tracking tool link:** [Flake Trello Board]() <!-- TODO: Insert trello board link and remove this comment -->
+**Tracking tool link:** [Flake Trello Board](https://trello.com/invite/b/6995f786163d3081fde6800c/ATTIb190fcd63beeca8bed233c0896ba1acaC325182C/flake-cspb-3308-team-4-project)
