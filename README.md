@@ -144,9 +144,10 @@ Structure:
   through an emphasis on a "Live" Sprint Board (Trello) and a weekly 
   synchronized meeting.
 
-- **Sprints (1 Week):** Sprints will run from Sunday to Saturday. This aligns 
-  with our weekly meeting schedule and allows for a clear "Reset" every weekend 
-  to evaluate progress and set new goals for the coming week.
+- **Sprints (1 Week):** Sprints will run on a weekly cycle, resetting every
+  Saturday to align with our weekly meeting. This allows the team to assess
+  our progress and performance from the previous week before kicking off a new
+  sprint.
 
 - **Task creation/prioritization:** Tasks are broken down into User Stories 
   (e.g., "As a user, I want to see which gear is unassigned when a member 
