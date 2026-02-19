@@ -31,7 +31,8 @@
 
 **2026-02-07:** [Initial Meeting - User Stories](https://drive.google.com/file/d/1G7F5mYXtdbbiQEcYztoqLuwhUYOP90v2/view?usp=sharing)
 
-**2026-02-14:** [Meeting 2 - Project Proposal]() <!-- TODO: Insert meeting 2 recording link and remove this comment -->
+**2026-02-14:** [Meeting 2 - Project Proposal](https://cuboulder.zoom.us/rec/share/PxpGkJ1gx61Ujqh6F09cn2UQh7ryxUjByLNr63yDxGJ62KdHiwSETHNjTwtMhk5a.0efkRzMKM-uC-cIS) 
+- Recording Passcode: 9g%5HWR&
 
 ## Vision Statement
 
