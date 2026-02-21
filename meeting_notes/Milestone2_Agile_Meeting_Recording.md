@@ -46,39 +46,40 @@ Each team member provided updates addressing:
 
 ### Aaron Brunswig
 - **Last week:**  
-  
+  Coursework, unite tests, looked ahead at flask and user authorixation to anticipate the idea of what ew can do. A;lso exploring the stack
 - **This week:**  
-  
+  Pick a page and create some user sotries to prepare for building the page
 - **Obstacles:**  
-  
+  Not much, just knowing where to start
 
 ---
 
 ### Joshua Morrison
 - **Last week:**  
-
+  Course work, got the project proposal turned in
 - **This week:** 
-
+  course work ccompletion, then dive into flask
 - **Obstacles:** 
-
+  Flask will be a new tool to learn and figuring out the project
 ---
 
 ### London Walker
 - **Last week:**  
-  
+  Made a few edits to the project overview, course work
 - **This week:**  
-
+  User stories for given page. Look into wire frames
 - **Obstacles:**  
+  Not at the moment
 
 ---
 
 ### Spencer Iascone
 - **Last week:**  
-  
+  Course work, 
 - **This week:**  
-  
+  User stories, 
 - **Obstacles:**  
-  
+  Exam,
 
 ---
 
@@ -110,6 +111,9 @@ The team demonstrated progress by walking through:
 - Some initial uncertainty about Agile terminology and sprint structure
 - Time spent clarifying expectations for milestone deliverables
 
+- Learning some git practices and merging steps
+- 
+
 ### How the Team Can Improve
 - Prepare short written updates before meetings to streamline standups
 - Time-box discussion segments more strictly
@@ -118,11 +122,18 @@ The team demonstrated progress by walking through:
 ---
 
 ## Action Items for Next Sprint
-- Finalize initial UI layouts
-- Begin backend and database scaffolding
-- Prepare materials for upcoming milestones
-- Maintain weekly Agile meetings following the same structure
-
+- User storeies for our pages (data specific)
+- Wire frames
+- Write up meeting notes
+- Add user stories folder to main
+- Learn flask
+- Team pages to work on:
+   + Login - Arron
+   + Trip Overview - Arron
+   + Pack List - Joshua
+   + Disvovery - London
+   + Itenerary - London
+   + Cost Splitter - Spencer
 ---
 
 ## Reflection
