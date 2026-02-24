@@ -14,9 +14,11 @@
 | Name            | GitHub     | Email                        |
 |:---------------:|:----------:|:----------------------------:|
 | Aaron Brunswig  | cdrekaputt | aaron.brunswig@colorado.edu  |
+| Yan Gu          |            | yan.gu@colorado.edu.         | 
 | Spencer Iascone | siascone   | spencer.iascone@colorado.edu |
 | Joshua Morrison | morrijos   | joshua.morrison@colorado.edu |
 | London Walker   | lochad     | london.walker@colorado.edu   | 
+
 
 ## Weekly Team Meeting
 
