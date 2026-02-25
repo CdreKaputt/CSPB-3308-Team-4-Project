@@ -3,7 +3,6 @@
 ## User Stories
 
 ### 1: Adding an Expense (MVP)
-
 **As a**: Trip member
 
 **I want**: To enter a total expense amount and description
@@ -56,7 +55,7 @@
 
 **When**: I view the "Overview" section.
 
-**Then**: I see a "Net Balance" (e.g., "You are owed $20" or "You owe $15").
+**Then**: I see a "Net Balance" (e.g., "You are owed $20" or "You owe $15" including who owes whom what).
 
 ---
 
@@ -79,7 +78,7 @@
 
 ---
 
-### 5: Real-time Updates
+### 5: Real-time Updates (MVP)
 **As a**: Developer
 
 **I want**: The UI to recalculate totals immediately after an expense is deleted or edited
@@ -96,7 +95,66 @@
 
 **Then**: The "Net Balance" for all trip members updates instantly without a full page refresh.
 
+---
 
+### 7. Member Departure Logic (Someone "Flaked") (MVP)
+**As a**: Developer
+
+**I want**: The system to recalculate or archive splits when a member is removed from a trip
+
+**So that**: The remaining members' balances are accurate and don't include a "ghost" debtor.
+
+#### Effort Level: ?
+
+#### Acceptance Criteria:
+
+**Given**: A $100 expense is split between 4 people ($25 each).
+
+**When**: One member is removed from the trip.
+
+**Then**: The system deletes that member's Expense_Splits records and updates the remaining 3 members to owe $33.33 each (plus or minus a penny).
+
+---
+
+### 8. Payer Credit Logic (Reach Goal)
+**As a**: Developer
+
+**I want**: The payer_id to be excluded from the "owe" calculation for a specific expense
+
+**So that**: The person who paid doesn't appear to owe themselves money in the balance sheet.
+
+#### Effort Level: ?
+
+#### Acceptance Criteria:
+
+**Given**: User A pays $100 for a trip with Users A, B, and C.
+
+**When**: The split is calculated.
+
+**Then**: User B and User C each have an Expense_Splits record for $33.33, but User A has $0 owed (or no record) because they already paid the full $100.
+
+LOGIC NOTE: When generating splits, the system should only create amount_owed records for Memberships.member_id != payer_id.
+
+---
+
+### 9. Pre-Trip Budgeting (Reach Goal)
+**As a**: Developer
+
+**I want**: To allow expenses to be added with an is_paid = False flag and no payer_id
+
+**So that**: Users can see projected costs and budget accordingly before anyone actually spends money.
+
+#### Effort Level: ?
+
+#### Acceptance Criteria:
+
+**Given**: The group is planning a trip and expects a rental car to cost $300.
+
+**When**: A user adds this as an "Estimate" (is_paid = False).
+
+**Then**: The system splits the $300 evenly across all members in the splits table so everyone sees a "Projected Debt" of $100.
+
+---
 
 ## Anticipated Minimum Relations:
 
