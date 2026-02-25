@@ -1,4 +1,4 @@
-# User Stories and DB Relations for Cost Splitter feature
+# User Stories, DB Relations and ASCII Wireframe for Cost Splitter feature
 
 ## User Stories
 
@@ -218,3 +218,14 @@ LOGIC NOTE: When generating splits, the system should only create amount_owed re
 
 NOTE: This one will be tricky, calculated when expense is added, updated when a 
       member flakes on trip 
+
+
+## Wireframe
+
+NOTE: Mocked up with figma starter via provided description:
+
+"Can you please create a web dashboard for a trip expense manager (Cost Splitter) page for a trip planner app. Top header with trip name and trip member dropdown. Main area is a 75% width table showing expenses with columns for Date, Description, Payer, Total, and Share. Right sidebar is a 25% width form to add a new expense with a description field, amount field, and radio buttons for payer choice. Add a sticky footer at the bottom showing a 'Net Balance' total."
+
+[Link to Interactive Version](https://sadly-marsh-71837886.figma.site/)
+
+![Cost Splitter Wireframe](cost-splitter-figma-mock-up.png)
