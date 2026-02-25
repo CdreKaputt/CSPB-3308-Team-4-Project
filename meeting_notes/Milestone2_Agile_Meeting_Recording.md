@@ -135,7 +135,7 @@ and minimum viable product features
 - Learn basic flask functionality
 - Team pages to work on:
    + Login - Aaron
-   + Trip Overview - Arron
+   + Trip Overview - Aaron
    + Pack List - Joshua
    + Disvovery - London
    + Itenerary - London
