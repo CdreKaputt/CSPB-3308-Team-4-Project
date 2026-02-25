@@ -14,7 +14,7 @@
 | Name            | GitHub     | Email                        |
 |:---------------:|:----------:|:----------------------------:|
 | Aaron Brunswig  | cdrekaputt | aaron.brunswig@colorado.edu  |
-| Yan Gu          |            | yan.gu@colorado.edu.         | 
+| Yan Gu          | yagu6173   | yan.gu@colorado.edu.         | 
 | Spencer Iascone | siascone   | spencer.iascone@colorado.edu |
 | Joshua Morrison | morrijos   | joshua.morrison@colorado.edu |
 | London Walker   | lochad     | london.walker@colorado.edu   | 
@@ -35,6 +35,9 @@
 
 **2026-02-14:** [Meeting 2 - Project Proposal](https://cuboulder.zoom.us/rec/share/PxpGkJ1gx61Ujqh6F09cn2UQh7ryxUjByLNr63yDxGJ62KdHiwSETHNjTwtMhk5a.0efkRzMKM-uC-cIS) 
 - Recording Passcode: 9g%5HWR&
+
+**2026-02-14:** [Meeting 3 - Milestone 2 Agile Meeting Recordng](https://cuboulder.zoom.us/rec/share/9RY_hPNqeMS9YDxaK4egY9oblIOp_k8iClCN-YxuH1z5nsuUvIuhFE5MXYpPwYEH.rehjRk2MBM_h3pim?from=hub) 
+- Recording Passcode: HM=2b?6a
 
 ## Vision Statement
 
