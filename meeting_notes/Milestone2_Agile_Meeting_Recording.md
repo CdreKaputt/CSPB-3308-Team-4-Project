@@ -134,7 +134,7 @@ and minimum viable product features
 - Add user stories folder to main
 - Learn basic flask functionality
 - Team pages to work on:
-   + Login - Arron
+   + Login - Aaron
    + Trip Overview - Arron
    + Pack List - Joshua
    + Disvovery - London
