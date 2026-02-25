@@ -115,7 +115,7 @@ and minimum viable product features
 ### 3. Sprint Retrospective (≈ 10 minutes)
 
 #### What Went Well
-- Clear communication and full tea attendance
+- Clear communication and full team attendance
 - Early agreement on scope and expectations
 - Effective role distribution based on strengths
 
