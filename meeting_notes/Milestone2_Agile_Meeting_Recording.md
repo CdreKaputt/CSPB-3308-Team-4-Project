@@ -86,6 +86,23 @@ Each team member provided updates addressing:
 - **Obstacles:**  
   + Potential obstacle: exam preperations for another class
 
+#### Yan Gu
+- **Last week:**  
+  + Completed all of week 5's assignments on unit test 
+  + Started on week 6 on Flask
+  + Aligned with team on user story assignment
+- **This week:**  
+  + Set up Slack for team's instant communication
+  + Take Scrum Master role for this week, handling Milestone 3
+  + Finish user stories and wireframes of my assigned page
+  + Plug myself into team collaboration
+    - Set up Figma for team collaboration on wireframing
+    - Add myself on team Trello for task tracking
+    - Practice pull request, review, merge, etc
+- **Obstacles:**  
+  + Manage team dynamics (gone)
+  + Slow ramp on Flask (50% done)
+
 ---
 
 ### 2. End-of-Sprint Demonstration (≈ 10 minutes)
@@ -137,7 +154,7 @@ and minimum viable product features
    + Login - Aaron
    + Trip Overview - Aaron
    + Pack List - Joshua
-   + Disvovery - London
+   + Disvovery - Yan
    + Itenerary - London
    + Cost Splitter - Spencer
 
