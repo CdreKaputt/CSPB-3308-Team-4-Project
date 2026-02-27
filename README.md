@@ -39,6 +39,9 @@
 **2026-02-14:** [Meeting 3 - Milestone 2 Agile Meeting Recordng](https://cuboulder.zoom.us/rec/share/9RY_hPNqeMS9YDxaK4egY9oblIOp_k8iClCN-YxuH1z5nsuUvIuhFE5MXYpPwYEH.rehjRk2MBM_h3pim?from=hub) 
 - Recording Passcode: HM=2b?6a
 
+**2026-02-27:** [Meeting 4 - Weekly Meeting Recordng](https://cuboulder.zoom.us/rec/share/d-mVRhBykrDviFHlabxsXoBxuYi5pAbdhGR8Mwf7WYGtvEKA4wKdhaTqmewGoNdb.4Ucs6fXcHBcHZ8iZ) 
+- Recording Passcode: M4!Rj@2q
+
 ## Vision Statement
 
 *A resource application to coordinate logistics for group trips where ***"who is 
