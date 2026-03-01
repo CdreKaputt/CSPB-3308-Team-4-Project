@@ -158,30 +158,36 @@ LOGIC NOTE: When generating splits, the system should only create amount_owed re
 
 ## Anticipated Minimum Relations:
 
-### trips
+### `users` (signed up site members)
 
-| Column Name   | Datatype        | Constraint/Description              |
-|---------------|-----------------|-------------------------------------|
-| `id`          | `INT`           | Primary Key, Not Null               |
-| `trip_name`   | `VARCHAR(255)`  | not null, Name of trip              |
-| `start_date`  | `DATE`          | not null, Start date of trip        |
-| `end_date`    | `DATE`          | not null, End date of trip          |
-| `created_at`  | `TIMESTAMP`     | Default CURRENT_TIMESTAMP           |
-| `updated_at`  | `TIMESTAMP`     | Default CURRENT_TIMESTAMP on update |
+| Column Name       | Datatype       | Constraint/Description              |
+|-------------------|----------------|-------------------------------------|
+| `id`              | `INT`          | Primary Key, Not Null               |
+| `username`        | `VARCHAR(80)`  | Not Null, Unique                    |
+| `email`           | `VARCHAR(100)` | Not Null, Unique                    |
+| `first_name`      | `VARCHAR(100)` | Not Null                            |
+| `last_name`       | `VARCHAR(100)` | Not Null                            |
+| `password_digest` | `VARCHAR(255)` | Not Null, hasshed password          |
+| `created_at`      | `TIMESTAMP`    | Default CURRENT_TIMESTAMP           |
+| `updated_at`      | `TIMESTAMP`    | Default CURRENT_TIMESTAMP on update |
+* index on `username, unique: true`
+* index on `email, unique: true`
 
-### users
+### `trips` (the main event)
 
-| Column Name  | Datatype       | Constraint/Description              |
-|--------------|----------------|-------------------------------------|
-| `id`         | `INT`          | Primary Key, Not Null               |
-| `username`   | `VARCHAR(50)`  | Not Null, Unique                    |
-| `email`      | `VARCHAR(100)` | Not Null, Unique                    |
-| `first_name` | `VARCHAR(100)` | Not Null                            |
-| `last_name`  | `VARCHAR(100)` | Not Null                            |
-| `created_at` | `TIMESTAMP`    | Default CURRENT_TIMESTAMP           |
-| `updated_at` | `TIMESTAMP`    | Default CURRENT_TIMESTAMP on update |
+| Column Name   | Datatype        | Constraint/Description                    |
+|---------------|-----------------|-------------------------------------------|
+| `id`          | `INT`           | Primary Key, Not Null                     |
+| `trip_name`   | `VARCHAR(255)`  | not null, Name of trip                    |
+| `leader_id`   | `INT`           | Foreign Key (Users.id), Not Null          |
+| `start_date`  | `DATE`          | not null, Start date of trip              |
+| `end_date`    | `DATE`          | not null, End date of trip                |
+| `public`      | `BOOLEAN`       | Not Null, indicate public or private trip |
+| `created_at`  | `TIMESTAMP`     | Default CURRENT_TIMESTAMP                 |
+| `updated_at`  | `TIMESTAMP`     | Default CURRENT_TIMESTAMP on update       |
+* `leader_id` references `users`
 
-### memberships (joins table between trips and users)
+## `memberships` (joins table between trips and users)
 
 | Column Name    | Datatype    | Constraint/Description              |
 |----------------|-------------|-------------------------------------|
@@ -190,35 +196,41 @@ LOGIC NOTE: When generating splits, the system should only create amount_owed re
 | `member_id`    | `INT`       | Foreign Key (Users.id), Not Null    |
 | `created_at`   | `TIMESTAMP` | Default CURRENT_TIMESTAMP           |
 | `updated_at`   | `TIMESTAMP` | Default CURRENT_TIMESTAMP on update |
+* `trip_id` references `trips`
+* `user_id` references `users`
 
 ### expenses
 
-| Column Name        | Datatype       | Constraint/Description                                    |
-|--------------------|----------------|-----------------------------------------------------------|
-| `id`               | `INT`          | Primary Key, Not Null                                     |
-| `trip_id`          | `INT`          | Foreign Key (Trips.id), Not Null                          |
-| `payer_id`         | `INT`          | Foreign Key (Users.id), Not Null                          |
-| `amount`           | `FLOAT`        | Not Null, Total cost of the item                          |
-| `description`      | `VARCHAR(255)` | Not Null, (ex: Gas, ARCO on 2/22/26)                      |
-| `is_paid`          | `BOOLEAN`      | Default False, True if a member has already paid in full  |
-| `expense_type`     | `VARCHAR(20)`  | Not Null, 'actual' (paid), 'estimate' (pre-trip budgt)    |
-| `created_at`       | `TIMESTAMP`    | Default CURRENT_TIMESTAMP                                 |
-| `updated_at`       | `TIMESTAMP`    | Default CURRENT_TIMESTAMP on update                       |
+| Column Name        | Datatype       | Constraint/Description                                     |
+|--------------------|----------------|------------------------------------------------------------|
+| `id`               | `INT`          | Primary Key, Not Null                                      |
+| `trip_id`          | `INT`          | Foreign Key (Trips.id), Not Null                           |
+| `payer_id`         | `INT`          | Foreign Key (Users.id), nullable                           |
+| `amount`           | `FLOAT`        | Not Null, Total cost of the item                           |
+| `description`      | `VARCHAR(255)` | Not Null, (ex: Gas, ARCO on 2/22/26)                       |
+| `is_paid`          | `BOOLEAN`      | Default False, True if a member has already paid in full   |
+| `single_payer`     | `BOOLEAN`      | Default False, True if a member takes ownership of expense |
+| `expense_type`     | `VARCHAR(20)`  | Not Null, 'actual' (paid), 'estimate' (pre-trip budgt)     |
+| `created_at`       | `TIMESTAMP`    | Default CURRENT_TIMESTAMP                                  |
+| `updated_at`       | `TIMESTAMP`    | Default CURRENT_TIMESTAMP on update                        |
+* `trip_id` references `trips`
+* `payer_id` references `users`
 
-### splits
+### splits (joins members to expense)
 
-| Column Name   | Datatype    | Constraint/Description                                                 |
-|---------------|-------------|------------------------------------------------------------------------|
-| `id`          | `INT`       | Primary Key, Not Null                                                  |
-| `expense_id`  | `INT`       | Foreign Key (Expenses.id), Not Null                                    |
-| `member_id`   | `INT`       | Foreign Key (Users.id), Not Null                                       |
-| `amount_owed` | `FLOAT`     | Not Null, Member portion of expense - Total Expense / num members - 1  |
-| `created_at`  | `TIMESTAMP` | Default CURRENT_TIMESTAMP                                              |
-| `updated_at`  | `TIMESTAMP` | Default CURRENT_TIMESTAMP on update                                    |
+| Column Name   | Datatype    | Constraint/Description                                                |
+|---------------|-------------|-----------------------------------------------------------------------|
+| `id`          | `INT`       | Primary Key, Not Null                                                 |
+| `expense_id`  | `INT`       | Foreign Key (Expenses.id), Not Null                                   |
+| `member_id`   | `INT`       | Foreign Key (Users.id), Not Null                                      |
+| `amount_owed` | `FLOAT`     | Not Null, Member portion of expense - Total Expense / num members - 1 |
+| `created_at`  | `TIMESTAMP` | Default CURRENT_TIMESTAMP                                             |
+| `updated_at`  | `TIMESTAMP` | Default CURRENT_TIMESTAMP on update                                   |
+* `expense_id` references `expenses`
+* `member_id` references `users`
 
 NOTE: This one will be tricky, calculated when expense is added, updated when a 
       member flakes on trip 
-
 
 ## Wireframe
 
