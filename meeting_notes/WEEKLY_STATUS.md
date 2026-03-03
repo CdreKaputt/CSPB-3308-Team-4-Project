@@ -94,7 +94,7 @@ The weekly status format was found to be useful for maintaining accountability a
 - **Yan Gu:** Set up Slack Workspace and dedicated channel for team's communication; Self-assigned one user page to rebalance others workload   
 - **Spencer Iascone:**  Created wireframing for one page using Figma 
 - **Joshua Morrison:**    
-- **London Walker:**    
+- **London Walker:** Reviewed others user stories and provided feedback  
 
 ---
 
