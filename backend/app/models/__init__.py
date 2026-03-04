@@ -5,4 +5,17 @@ from app.models.user import User
 # from app.models.event import Event
 # from app.models.attendee import Attendee
 # from app.models.expense import Expense
-# from app.models.splits import Splits
+# from app.models.split import Split
+
+# __all__ Indicates to pylance that models declared
+# here are intended for re-export
+__all__ = [
+    "User",
+    # "Trip",
+    # "Membership",
+    # "Item",
+    # "Event",
+    # "Attendee",
+    # "Expense",
+    # "Split",
+]
