@@ -1,15 +1,18 @@
 from flask import Flask
-from .extensions import db, migrate
+from .extensions import db, migrate, jwt
 from .config import config
 
-def create_app(config_name="default")
+
+def create_app(config_name="default"):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
     db.init_app(app)
     migrate.init_app(app, db)
+    jwt.init_app(app)
 
-    from .api.users import bp as users_bp
-    app.register_blueprint(users_bp, url_prefix="/api/v1/users")
+    from .api.auth import bp as auth_bp
+
+    app.register_blueprint(auth_bp, url_prefix="/api/auth")
 
     return app

@@ -1,5 +1,13 @@
+import os
+
+
 class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.getenv("PROD_DATABASE_URL")
 
 
 class DevelopmentConfig(Config):
@@ -13,6 +21,7 @@ class TestingConfig(Config):
 
 
 config = {
+    "production": ProductionConfig,
     "development": DevelopmentConfig,
     "testing": TestingConfig,
     "default": DevelopmentConfig,
