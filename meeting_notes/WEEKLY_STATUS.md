@@ -69,13 +69,13 @@ Key accomplishments include:
 ---
 
 ## Blockers and Issues
-No major technical blockers were encountered this week.
+No major technical blockers were encountered this week.  
 Weekly meeting rescheduled to Thursday evening may bring conflicts for some. 
 
 ---
 
 ## Risks and Mitigation
-**Identified Risk:** Feature Creep: The current plan includes 5 pages; attempting to fully polish all of them may exceed the project timeline.
+**Identified Risk:** Feature Creep: The current plan includes 5 pages; attempting to fully polish all of them may exceed the project timeline.  
 - *Mitigation:* The team will prioritize pages of "Must-Haves" for an MVP and deprioritize the "Nice-to-Have" pages if development falls behind schedule. to ensure the core application is functional.
 
 ---
@@ -90,14 +90,14 @@ The weekly status format was found to be useful for maintaining accountability a
 ---
 
 ## Individual Contributions This Week
-- **Aaron Brunswig:**   
+- **Aaron Brunswig:**  Completed user stories for the login and overview pages, and reviewed existing repo's code.
 - **Yan Gu:** Set up Slack Workspace and dedicated channel for team's communication; Self-assigned one user page to rebalance others workload   
-- **Spencer Iascone:**  Created wireframing for one page using Figma 
-- **Joshua Morrison:**    
+- **Spencer Iascone:**  Developed Cost Splitter user story and created wireframing using Figma based on user story. Created a requirements.txt file and drafted a database schema.
+- **Joshua Morrison:**  Focused on keeping up with the course content, and maintained meeting recordings. 
 - **London Walker:** Reviewed others user stories and provided feedback  
 
 ---
 
 ## Notes
-This file will be updated regularly as the project progresses.  
+This file will be updated regularly as the project progresses.    
 Earlier weekly entries may be retained below or moved to an archive directory if the file grows large.
