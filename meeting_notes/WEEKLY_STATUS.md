@@ -64,7 +64,7 @@ Key accomplishments include:
 - Joshua offered to review user stories and consider database structure.
 - Yan will take the Scrum Master role and drive the Milestone 3 deliverables
 - London: Complete one user story and wireframe for one page
-- Aaon to complete the individual wiregrames
+- Aaron to complete the individual wireframes
 
 ---
 
@@ -75,8 +75,8 @@ Weekly meeting rescheduled to Thursday evening may bring conflicts for some.
 ---
 
 ## Risks and Mitigation
-**Identified Risk:**   
-- *Mitigation:* 
+**Identified Risk:** Feature Creep: The current plan includes 5 pages; attempting to fully polish all of them may exceed the project timeline.
+- *Mitigation:* The team will prioritize pages of "Must-Haves" for an MVP and deprioritize the "Nice-to-Have" pages if development falls behind schedule. to ensure the core application is functional.
 
 ---
 
