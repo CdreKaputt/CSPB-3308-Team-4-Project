@@ -1,12 +1,15 @@
 ## Project Milestone 3: Weekly Status Report
 
+**Team #:** 4  
 **Project:** Flake  
 **Team Number:** 5  
 **Team Name:** Mountain Hackers  
+**Report Link:** https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/edit/main/meeting_notes/WEEKLY_STATUS.md
 
 ---
 
 ## Reporting Period
+
 **Week:** 6  
 **Meeting Held:** Yes  
 **Meeting Date:** February 26  
