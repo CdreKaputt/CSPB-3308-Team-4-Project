@@ -4,7 +4,7 @@
 **Project:** Flake  
 **Team Number:** 5  
 **Team Name:** Mountain Hackers  
-**Report Link:** https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/edit/main/meeting_notes/WEEKLY_STATUS.md
+**Report Link:** https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/blob/main/meeting_notes/WEEKLY_STATUS.md
 
 ---
 
