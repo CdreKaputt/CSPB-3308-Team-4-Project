@@ -154,7 +154,7 @@ Structure:
   synchronized meeting.
 
 - **Sprints (1 Week):** Sprints will run on a weekly cycle, resetting every
-  Saturday to align with our weekly meeting. This allows the team to assess
+  Thursday to align with our weekly meeting. This allows the team to assess
   our progress and performance from the previous week before kicking off a new
   sprint.
 
