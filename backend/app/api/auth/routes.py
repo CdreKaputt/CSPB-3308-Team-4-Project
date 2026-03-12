@@ -13,7 +13,7 @@ from app.models import User
 
 @bp.route("/signup", methods=["POST"])
 def register():
-    data = request.get_json(silent=True)    # silent=True prevents default 415 res
+    data = request.get_json(silent=True)  # silent=True prevents default 415 res
 
     if not data:
         return jsonify({"error": "No data provided"}), 400
@@ -65,17 +65,19 @@ def login():
     access_token = create_access_token(identity=str(user.id))
     refresh_token = create_refresh_token(identity=str(user.id))
 
-    return jsonify({
-        "access_token": access_token,
-        "refresh_token": refresh_token,
-        "user": {
-            "id": user.id,
-            "username": user.username,
-            "email": user.email,
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-        },
-    }), 200
+    return jsonify(
+        {
+            "access_token": access_token,
+            "refresh_token": refresh_token,
+            "user": {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+            },
+        }
+    ), 200
 
 
 @bp.route("/refresh", methods=["POST"])
