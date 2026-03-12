@@ -11,7 +11,7 @@ from app.extensions import db
 from app.models import User
 
 
-@bp.route("/register", methods=["POST"])
+@bp.route("/signup", methods=["POST"])
 def register():
     data = request.get_json(silent=True)    # silent=True prevents default 415 res
 
