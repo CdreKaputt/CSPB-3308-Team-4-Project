@@ -33,7 +33,7 @@ Purpose: **Pack List** allows users to _create_, _edit_, and _manage_ a shared l
 
 **Mockup (low-fidelity):**
 
-![wireframe-image]("packlist-wireframe.png")
+![wireframe-image]("./assets/packlist-wireframe.png")
 
 ## Parameters Needed for Page
 - Route params: None
@@ -250,3 +250,48 @@ Purpose: Provide users essential information of a group trip as an overview, suc
    - users can be successfully redirected to intended linked pages
 
 ---
+
+# Itinerary Page
+## Page Title
+Itinerary
+## Page Description
+Purpose: Create, edit, and view a trip's itinerary in cronological order. Click on an event to view more information about it.
+
+**Mockup (low-fidelity):**
+
+![wireframe-image]("itinerary-wireframe.jpg")
+
+## Parameters Needed for the Page
+- Route params: none
+- Query params (optional): trip_id
+
+## Data Needed to Render the Page
+- Auth state: current user id
+- API data:
+  - `GET /api/events?trip_id=...` → return a list of events for a specific trip pass back trip_id key in query params object
+  - `POST /api/events` → create a new event associated with a specific trip, pass back trip_id key in query params object and pass back current_user_id key in query params object (Used by Event Create Form)
+  - `PATCH /api/events/<event_id>` → update an event (Used by Event Create Form)
+  - `DELETE /api/events/<event_id>` → delete an event (Used by Event Create Form)
+- UI state:
+  - new-activity form fields
+  - selected activity
+  - edit-activity form fields
+  - list (events for trip)
+
+## Link Destinations for the Page
+- Trip Overview → `/trips/:tripId`
+- Event details → `/events/:event_id`
+
+## Tests for Verifying Rendering of the Page
+1. **List renders data**
+   - List of events appears for trip dates/times
+2. **Selection behavior**
+   - Clicking an event goes to the event page
+4. **Save flow (for embedded form)**
+   - Clicking Save calls API and shows success message
+5. **Event update preview**
+   - With `?event_id=...`, update preview appears and updates after save (or after fetch)
+6. **Empty state**
+   - If no events, embedded form will show with a message about no events
+7. **Delete flow**
+   - Deleting an event will show a message confirming the event was deleted
