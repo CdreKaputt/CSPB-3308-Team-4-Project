@@ -33,7 +33,7 @@ Purpose: **Pack List** allows users to _create_, _edit_, and _manage_ a shared l
 
 **Mockup (low-fidelity):**
 
-![wireframe-image]("./assets/packlist-wireframe.png")
+![wireframe-image](./assets/packlist-wireframe.png)
 
 ## Parameters Needed for Page
 - Route params: None
@@ -259,7 +259,7 @@ Purpose: Create, edit, and view a trip's itinerary in cronological order. Click 
 
 **Mockup (low-fidelity):**
 
-![wireframe-image]("itinerary-wireframe.jpg")
+![wireframe-image](./assets/itinerary-wireframe.png)
 
 ## Parameters Needed for the Page
 - Route params: none
