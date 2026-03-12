@@ -23,7 +23,7 @@ def login():
         return jsonify({"error": "Missing required fields"}), 400
 
     user = User.query.filter_by(username=data["username"]).first()
-
+    
     if not user or not check_password_hash(user.password_digest, data["password"]):
         return jsonify({"error": "Invalid username or password"}), 401
 
@@ -33,6 +33,10 @@ def login():
     return jsonify({
         "access_token": access_token,
         "refresh_token": refresh_token,
+        "user": {
+            "id": user.id,
+            "username": user.username
+        }
     }), 200
 
 
