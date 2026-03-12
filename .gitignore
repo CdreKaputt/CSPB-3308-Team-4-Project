@@ -46,6 +46,9 @@ instance/
 *.sqlite3
 migrations/versions/*.pyc
 
+# Ruff
+.ruff_cache
+
 # ========================
 # Vite / React (Frontend)
 # ========================
@@ -58,9 +61,18 @@ dist-ssr/
 # ========================
 # IDEs & OS
 # ========================
-.vscode/
 .idea/
 *.swp
 *.swo
 .DS_Store
 Thumbs.db
+
+# VS Code
+.vscode
+# .vscode/*
+#!.vscode/settings.json
+
+# ========================
+# Jupyter Notebook
+# ========================
+.ipynb_checkpoints/
