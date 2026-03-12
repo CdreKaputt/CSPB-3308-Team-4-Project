@@ -1,25 +1,134 @@
-# PAGE_TESTING.md
+# Flake Web Pages Design
 
-This document defines the **pages** StudySync will implement and what is required to (1) render them correctly and (2) test them consistently.
-
-At least **5 independent pages** are included below.
+This document defines the pages Flake will implement, what data each page needs to render, and how to verify that each page works correctly.
 
 ---
 
 ## Conventions Used in This Document
 
 ### Parameter Types
-- **Route params**: values embedded in the URL path (e.g., `/groups/:groupId`)
-- **Query params**: values after `?` in the URL (e.g., `?tab=tasks`)
-- **State params**: values passed through navigation state (optional; avoid for critical data)
+- **Route params**: values embedded in the URL path (e.g., `/trips/:tripId`)
+- **Query params**: values appended to the URL after `?` (e.g., `?trip_id=1`)
 
 ### Data Types
-- **Auth state**: current user identity + session token
-- **API data**: data fetched from backend services
-- **UI state**: transient values like form fields, selected filters, toggles
+- **Auth state**: the current user's identity, derived from the stored JWT token
+- **API data**: data fetched from the Flask backend
+- **UI state**: transient values managed by the frontend, such as form fields and selected items
 
 ### Mockups
-Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replace these with hand-drawn screenshots later.
+Each page includes a low-fidelity mockup. Mockups are either an image file or an ASCII wireframe.
+
+---
+
+# Login Page
+
+## Page Title
+Login
+
+## Page Description
+Purpose: Allow existing users to log in to their Flake account. The page displays the Flake branding, a sign-in form with username and password fields, and a graphic/image panel to the right. Submitting the form authenticates the user and redirects them to the dashboard.
+
+**Mockup (low-fidelity):**
+
+![wireframe-image](./assets/login-wireframe.png)
+
+## Parameters Needed for the Page
+- Route params: none
+- Query params (optional): `redirect` - path to redirect to after successful login
+
+## Data Needed to Render the Page
+- Auth state: none (guest only page)
+- API data:
+  - `POST /api/auth/login` → log in with username and password, returns `access_token`, `refresh_token`
+- UI state:
+  - username field
+  - password field
+  - error message
+
+## Link Destinations for the Page
+- Dashboard → `/dashboard` (on successful login)
+- Sign Up → `/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Form renders**
+   - Username and password fields are present
+   - Submit button is present
+2. **Successful login**
+   - Valid credentials call `POST /api/auth/login` and redirect to dashboard
+   - Access and refresh tokens are stored in the frontend auth state
+3. **Failed login**
+   - Invalid credentials show an error message
+   - User stays on the login page
+4. **Empty field validation**
+   - Submitting with missing fields shows a validation error
+5. **Already authenticated**
+   - A logged-in user visiting this page is redirected away from login
+
+---
+
+# 1) Trip Overview Page
+
+## Page Title
+Trip Overview
+
+## Page Description
+Purpose: Provide users essential information of a group trip as an overview, such as description, place, date and time, members, etc
+
+**Mockup (low-fidelity):**
+```
++------------------------------------------------------+
+| Flake                                                |
+| "Organizing group trip is made never easier."        |
+|------------------------------------------------------|
+| <Basic info>                                         |
+| Trip Name |  Destination | Date and time             |
+| <More Details>                                       |
+| Itenerary | Pack List | Events                       |
+| <Members>                                            |
+| All member names                                     |
+|------------------------------------------------------|
+| Features/Functionalities                             |
+|  • View basic info about this group trip             |
+|  • Redirect to more detailed pages                   |
+|  • Add more people to existing member list           |
++------------------------------------------------------+
+```
+
+## Parameters Needed for the Page
+- Route params: `?redirect=/trip_id`
+- Query params: `?redirect=/path`
+
+## Data Needed to Render the Page
+-	Static content
+    + headers
+    + menus
+-   Trip specific data
+    + Trip description: GET /api/trips/<trip_id>
+    + Member list: GET /api/members/
+    + Pack list: GET /api/items
+    + Date and time: GET /api/trips/<trip_id>
+    + Meeting place: GET /api/trips/<trip_id>
+- User actions
+    + Edit member list: POST /api/members
+    + Aadd/remove an event to the trip: GET /api/events
+    + (stretch) assign/unassign a pack list to themselves or others
+
+## Link Destinations for the Page
+- **Itinerary** → `/trips/:itinerary`
+- **Events** → `/events/:event_id`
+- (Optional) Find more / Discovery → `/TBD` (if implemented)
+
+## Tests for Verifying Rendering of the Page
+1. **Page rendering**
+    - headers
+    - menu
+    - bottoms (if imlemented)
+2. **User actions**
+    - Users can successfully add/delete names to member list
+    - Users can successfully add/remove an event to the trip
+    - (stretch) Users can successfully assign/unassign/reassign a pack list to themselves or others
+3. **Redirect behavior**
+   - users can be successfully redirected to intended linked pages
 
 ---
 
@@ -182,72 +291,6 @@ is shared or assigned to an individual trip member.
 - An overall total for each member is displayed on the page
   - This total is comprised of shared expenses as well as any expense that is 
     the responsibility of a single trip member
-
---- 
-
-# 1) Trip Overview Page
-
-## Page Title
-Trip Overview
-
-## Page Description
-Purpose: Provide users essential information of a group trip as an overview, such as description, place, date and time, members, etc
-
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| Flake                                                |
-| "Organizing group trip is made never easier."        |
-|------------------------------------------------------|
-| <Basic info>                                         | 
-| Trip Name |  Destination | Date and time             |
-| <More Details>                                       |
-| Itenerary | Pack List | Events                       |
-| <Members>                                            |
-| All member names                                     |
-|------------------------------------------------------|
-| Features/Functionalities                             |
-|  • View basic info about this group trip             |
-|  • Redirect to more detailed pages                   |
-|  • Add more people to existing member list           |
-+------------------------------------------------------+
-```
-
-## Parameters Needed for the Page
-- Route params: `?redirect=/trip_id`
-- Query params: `?redirect=/path`
-
-## Data Needed to Render the Page
--	Static content
-    + headers 
-    + menus
--   Trip specific data
-    + Trip description: GET /api/trips/<trip_id>
-    + Member list: GET /api/members/
-    + Pack list: GET /api/items
-    + Date and time: GET /api/trips/<trip_id>
-    + Meeting place: GET /api/trips/<trip_id>
-- User actions
-    + Edit member list: POST /api/members
-    + Aadd/remove an event to the trip: GET /api/events
-    + (stretch) assign/unassign a pack list to themselves or others
-
-## Link Destinations for the Page
-- **Itinerary** → `/trips/:itinerary`
-- **Events** → `/events/:event_id`
-- (Optional) Find more / Discovery → `/TBD` (if implemented)
-
-## Tests for Verifying Rendering of the Page
-1. **Page rendering**
-    - headers
-    - menu
-    - bottoms (if imlemented)
-2. **User actions**
-    - Users can successfully add/delete names to member list
-    - Users can successfully add/remove an event to the trip
-    - (stretch) Users can successfully assign/unassign/reassign a pack list to themselves or others
-3. **Redirect behavior**
-   - users can be successfully redirected to intended linked pages
 
 ---
 
