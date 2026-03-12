@@ -1,0 +1,66 @@
+# ========================
+# Python (Backend)
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+.installed.cfg
+lib/
+lib64/
+.venv/
+venv/
+ENV/
+env/
+.env
+*.env
+
+# Python testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Flask
+instance/
+.webassets-cache
+
+# SQLAlchemy / Database
+*.db
+*.sqlite
+*.sqlite3
+migrations/versions/*.pyc
+
+# ========================
+# Vite / React (Frontend)
+# ========================
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+
+# ========================
+# IDEs & OS
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
