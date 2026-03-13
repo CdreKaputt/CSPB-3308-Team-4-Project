@@ -20,7 +20,7 @@ Each page includes a low-fidelity mockup. Mockups are either an image file or an
 
 ---
 
-# Login Page
+# 1) Login Page
 
 ## Page Title
 Login
@@ -66,7 +66,7 @@ Purpose: Allow existing users to log in to their Flake account. The page display
 
 ---
 
-# 1) Trip Overview Page
+# 2) Trip Overview Page
 
 ## Page Title
 Trip Overview
@@ -132,7 +132,7 @@ Purpose: Provide users essential information of a group trip as an overview, suc
 
 ---
 
-# Pack List Page
+# 3) Pack List Page
 
 ## Page Title
 Pack List
@@ -186,7 +186,7 @@ Purpose: **Pack List** allows users to _create_, _edit_, and _manage_ a shared l
 
 ---
 
-# Expenses/Cost Splitter Page
+# 4) Expenses/Cost Splitter Page
 
 ## Page Title
 Expense List (Cost Splitter)
@@ -294,7 +294,7 @@ is shared or assigned to an individual trip member.
 
 ---
 
-# Itinerary Page
+# 5) Itinerary Page
 ## Page Title
 Itinerary
 ## Page Description
