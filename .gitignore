@@ -1,0 +1,78 @@
+# ========================
+# Python (Backend)
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+.installed.cfg
+lib/
+lib64/
+.venv/
+venv/
+ENV/
+env/
+.env
+*.env
+
+# Python testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Flask
+instance/
+.webassets-cache
+
+# SQLAlchemy / Database
+*.db
+*.sqlite
+*.sqlite3
+migrations/versions/*.pyc
+
+# Ruff
+.ruff_cache
+
+# ========================
+# Vite / React (Frontend)
+# ========================
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+
+# ========================
+# IDEs & OS
+# ========================
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode
+# .vscode/*
+#!.vscode/settings.json
+
+# ========================
+# Jupyter Notebook
+# ========================
+.ipynb_checkpoints/
