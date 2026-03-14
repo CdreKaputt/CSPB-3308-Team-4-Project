@@ -1,0 +1,56 @@
+.main-header {
+    background-color: F7F9FB;
+    border-bottom: solid 1px #333;
+    padding: 1rem 2rem;
+    /* height: 57px */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #666;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* color: #007bff; */
+}
+
+.nav-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #666;
+}
+
+.logout-form {
+    display: inline;
+}
