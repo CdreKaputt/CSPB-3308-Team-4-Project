@@ -1,0 +1,106 @@
+.main-login, .main-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* border: 1px solid black;
+    border-radius: 20px; */
+    margin: 10px;
+    color: inherit
+}
+
+.login-left, .signup-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black;
+    border-radius: 20px; */
+    margin: 10px;
+    width: calc(50% - 10px);
+    height: calc(100% - 20px);
+}
+
+.auth-logo-container {
+    display: flex;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    margin: 10px;
+    font: italic;
+    font-weight: bold;
+}
+
+.auth-logo-img {
+    border-radius: 20px;
+    height: 90px;
+    width: 208px;
+}
+
+.login-form-container, .signup-form-container {
+    max-width: 400px;
+    /* margin: 2rem auto; */
+    padding: 2rem; 
+    background-color: #FFFFFF;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+}
+
+.login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 1.5rem; */
+    /* border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px; */
+}
+
+.login-form > input,
+.signup-form > input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    /* margin: 5px; */
+}
+
+.login-form-container > p, 
+.signup-form-container > p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.login-form-container > h2, 
+.signup-form-container > h2 {
+    /* width: 100%; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+}
+
+.login-button, .signup-button {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+}
+
+.login-right, .signup-right { 
+    /* border: 1px solid black; */
+    background-color: #888;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: calc(100% - 20px);
+    margin: 10px;
+    width: calc(50% - 10px);
+}
+

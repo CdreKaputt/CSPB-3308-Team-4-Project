@@ -1,8 +1,7 @@
 @import "style_sheets/nav.css";
 @import "style_sheets/dashboard.css";
 @import "style_sheets/about.css";
-@import "style_sheets/login.css";
-@import "style_sheets/signup.css";
+@import "style_sheets/auth_forms.css";
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -63,7 +62,7 @@ html, body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    background-color: #F7F9FB;
+    background-color: white;
 }
 
 main {

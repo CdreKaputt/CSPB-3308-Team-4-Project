@@ -28,4 +28,17 @@ def required_logged_out(f):
             return f(*args, **kwargs)
     
     return decorated
+
+def required_logged_in(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        # Check if the 'user' key exits in session
+        if "user" not in session:
+            flash("You must be logged in to access that page.", "error")
+            return redirect(url_for("auth_forms.login"))
+
+        # Otherwise user must be logged in, grant access
+        return f(*args, **kwargs)
+
+    return decorated
     

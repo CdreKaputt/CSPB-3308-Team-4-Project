@@ -1,5 +1,26 @@
 {% extends "home.html" %}
 
 {% block content %}
-    <h2>You are on the Dashboard</h2>
+    <div class="main-dashboard">
+        <header class="dashboard-header">
+            <h2>Flake Dashboard</h2>
+            <ul class="dashboard-nav-links">
+                <li class="nav-link">A Page Link</li>
+                <li class="nav-link">Another Page Link</li>
+                <li class="new-trip">New Trip</li> 
+            </ul>
+        </header>
+        <div class="trips-container">
+            <h2>My Trips</h2>
+            <div class="trips-index">
+                {% for trip in trips %}
+                    <p>element that holds trip info</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="create-trip-button">
+
+        </div>
+
+    </div>
 {% endblock %}

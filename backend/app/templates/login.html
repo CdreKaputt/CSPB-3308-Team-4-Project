@@ -3,11 +3,11 @@
 {% block content %}
     <div class="main-login">
         <div class="login-left">
-            <div class="login-logo">
-                FLAKE
+            <div class="auth-logo-container">
+                <img class="auth-logo-img" src="../static/images/flake-logo.png" alt="">
             </div>
             <div class="login-form-container">
-                <h2>Sign In</h2>
+                <h2>Login</h2>
                 <p>Welcome back! Please enter your info</p>
                 <form class="login-form" action="{{ url_for('auth.login') }}" method="POST">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -15,11 +15,11 @@
                     <input type="password" name="password" placeholder="Password" required><br>
                     <button class="login-button" type="submit">Login</button>
                 </form>
-                <p>Not yet amember? <a href="{{ url_for('auth_forms.signup')}}">Sign Up</a></p>
+                <p>Not yet a member? <a class="nav-link" href="{{ url_for('auth_forms.signup')}}">Sign Up</a></p>
             </div>
         </div>
         <div class="login-right">
-            Some cool info about Flake will go here
+            <p>Some cool info about Flake will go here</p>
         </div>
     </div>
     
