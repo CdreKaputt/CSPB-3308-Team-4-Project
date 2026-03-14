@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flake</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('main.dashboard') if session.get('user') else url_for('main.about')}}">Flake</a> |
+            {% if session.get('user') %}
+            <span>Welcome, {{ session['user'] }}!</span> |
+            
+            <form action="{{ url_for('auth.logout') }}" method="POST" style="display: inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit">
+                    Logout
+                </button>
+            </form>
+            {% else %}
+            <a href="{{ url_for('auth_forms.login') }}">Login</a> |
+            <a href="{{ url_for('auth_forms.signup')}}">Sign Up</a>
+            {% endif %}
+        </nav>
+    </header>
+    <hr>
+
+    <!-- All Templates render here -->
+    <main> 
+        {% block content %}{% endblock %}
+    </main>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div>
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+</body>
+
+</html>
