@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session, redirect, render_template, url_for
 from .extensions import db, migrate, jwt
 from .config import config
 from flask_wtf.csrf import CSRFProtect
@@ -19,10 +19,10 @@ def create_app(config_name="default"):
     from .routes.auth_form_routes import auth_forms_bp
     
     # Template Routes
-    app.register_blueprint(main_bp, url_prefix="/")
-    app.register_blueprint(auth_forms_bp, url_prefix="/")
+    app.register_blueprint(main_bp, url_prefix='/')
+    app.register_blueprint(auth_forms_bp, url_prefix='/')
     # API Routes
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(users_bp, url_prefix="/api/users")
-
+    
     return app
