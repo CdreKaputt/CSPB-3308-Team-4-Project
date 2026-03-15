@@ -62,19 +62,24 @@ Based on the category of messages (error, all others) the messages div sytle cha
 - See `static/css/style_sheets/messages.css`
 
 Here are some examples:
-* **Logout Success**
+**Logout Success**
+
 ![Logout Success Message](images/logout-success-message.png)
 
-* **Login Error**
+**Login Error** 
+
 ![Login Error Message](images/login-error-message.png)
 
-* **Signup Success**
+**Signup Success** 
+
 ![Signup Success Message](images/signup-success-message.png)
 
-* **Signup Error**
+**Signup Error** 
+
 ![Signup Error Message](images/signup-error-message.png)
 
-* **Protected Routes**
+**Protected Routes** 
+
 ![Protected Route Message](images/protected-routes-message.png)
 
 
