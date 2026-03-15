@@ -52,7 +52,33 @@ list of trips as well as the ability to access creating a New Trip
 * **Dashboard without Trips**
 ![Dashboard with Trips](images/dashboard-no-trips.png)
 
-## 4. Logic Changes
+## 4. Error and Success Messages
+The flash object is used to dynamically send error or success messages depending on the
+route being accessed. The messages div lives on the center of the page and only displays
+where there are messages in the flash object (see `templates/home.html lines 56-66`).
+
+Based on the category of messages (error, all others) the messages div sytle changes
+- Red for errors, green for all else
+- See `static/css/style_sheets/messages.css`
+
+Here are some examples:
+* **Logout Success**
+![Logout Success Message](images/logout-success-message.png)
+
+* **Login Error**
+![Login Error Message](images/login-error-message.png)
+
+* **Signup Success**
+![Signup Success Message](images/signup-success-message.png)
+
+* **Signup Error**
+![Signup Error Message](images/signup-error-message.png)
+
+* **Protected Routes**
+![Protected Route Message](images/protected-routes-message.png)
+
+
+## 5. Logic Changes
 NOTE: All changes listed below are aime to prioritize eaze of development in alignment 
 with the material we are learning in class as well as respect the reality of the
 limited time each team member has to commit to this project each week. All changes
@@ -87,7 +113,7 @@ made to the auth pattern.
           logged in member. We can update this at a later time to include more
           user details such as Frist Name, Last Name, user_id etc.
 
-## 5. State of the app and next steps
+## 6. State of the app and next steps
 
 At this moment the app is functional and usable for signup, 
 login, logout, dashboard viewing and an about page that has our team's info on it. 
@@ -101,11 +127,11 @@ There is a rudamentry error handling set up using the `flash` object from Flask,
   idealy positioned around the form that would trigger them in the event of an error.
 
 As for next steps:
-- Some quick styling on the errors, I can handle this tomorrow Sunday, March 15th
+- DONE -> Some quick styling on the errors, I can handle this tomorrow Sunday, March 15th
 - A Pull Request and team review
 - Merge to main
 - Write up of a feature development procedure: 
-    - `model -> migration -> routes -> templates -> repeat`
+    - `model -> migration -> tests -> routes -> tests -> templates -> tests -> repeat`
     - I'll start working on this tomorrow Sunday, March 15th
 - Feature assignments to team members
     - Team members cut feature branches for their perspective feature and begin 
@@ -114,7 +140,7 @@ As for next steps:
         - frontend (templates)
 
 
-## 6. Getting the project running
+## 7. Getting the project running
 Currently the entirety of the app lives in a folder called `backend`. This was 
 originally set up as we planned to have a React frontend decoupled from the backend. 
 For now we can keep it this way and just work out of the `backend` folder. 
