@@ -1,5 +1,37 @@
 {% extends "home.html" %}
 
 {% block content %}
-<h2>You are on the About Page</h2>
+
+    <div class="main-about">
+        <div class="about-greeting">
+            <h2>Don't be a flake!</h2>
+            <p>The ultimate group trip planner designed to get the whole crew to actually show up</p>
+        </div>
+
+        <div class="dev-section">
+            <h2>Meet the Developers</h2>
+            <div class="dev-grid">
+                {% set developers = [
+                    {"name": "Aaron Brunswig", "github": "CdreKaputt", "location": "Denver, CO"},
+                    {"name": "Joshua Morrison", "github": "morrijos", "location": "Fort Collins, CO"},
+                    {"name": "London Walker", "github": "lochad", "location": "Colorado Springs, CO"},
+                    {"name": "Spencer Iascone", "github": "siascone", "location": "Boulder, CO"},
+                    {"name": "Yan Gu", "github": "yagu6173", "location": "San Francisco, CA"},
+                ] %}
+
+                {% for dev in developers %}
+                    <div class="dev-index-item">
+                        <img src="https://placehold.co/150x150?text={{ dev.name.split(' ')[0] }}" alt="{{ dev.name }}" class="dev-image">                    
+                        <div class="dev-details">
+                            <h3>{{ dev.name}}</h3>
+                            <p class="dev-github"><Strong>GitHub:</Strong> {{dev.github}}</p>
+                            <p class="dev-location">{{ dev.location }}</p>
+                        </div>
+                        <a class="github-button" href="https://github.com/{{ dev.github }}" target="_blank">View GitHub Profile</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

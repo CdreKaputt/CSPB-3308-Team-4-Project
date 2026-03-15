@@ -11,10 +11,35 @@
             </ul>
         </header>
         <div class="trips-container">
-            <h2>My Trips</h2>
+            <div class="trips-heading">
+                <h2>My Trips</h2>
+            </div>
             <div class="trips-index">
                 {% for trip in trips %}
-                    <p>element that holds trip info</p>
+                    <div class="trip-index-item">
+                        <div class="trip-info">
+                            <h3 class="trip-name">{{trip.name}}</h3>
+                            <div class="trip-details">
+                                <span>Departure Date: {{ trip.start_date }}</span>
+                                <span>{{ trip.group_count }} members</span>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="">View Details →</a>
+                    </div>
+                {% else %}
+                    <div class="empty-trips">
+                        <p>No trips yet. Click New Trip and start palling today!</p>
+                    </div>
+                    <div class="trip-index-item">
+                        <div class="trip-info">
+                            <h3 class="trip-name">Sample: Estes Park Getaway</h3>
+                            <div class="trip-details">
+                                <span class="trip-date">Departure Date: May 7th, 2026</span>
+                                <span class="trip-members-count">6 members</span>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="">View Details →</a>
+                    </div>
                 {% endfor %}
             </div>
         </div>
