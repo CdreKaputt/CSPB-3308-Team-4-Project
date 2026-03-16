@@ -30,7 +30,7 @@
                             </div>
                             
                             <hr>
-                            <form clas="logout-form" action="{{ url_for('auth.logout') }}" method="POST" style="display: inline;">
+                            <form class="logout-form" action="{{ url_for('auth.logout') }}" method="POST" style="display: inline;">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <button class="nav-button" type="submit">
                                     Logout
@@ -41,8 +41,8 @@
                     
                     
                 {% else %}
-                    <a class="nav-link" href="{{ url_for('auth_forms.login') }}">Login</a> |
-                    <a class="nav-link" href="{{ url_for('auth_forms.signup')}}">Sign Up</a>
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a> |
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
                 {% endif %}
             </div>
         </nav>
