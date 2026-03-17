@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, session, redirect, url_for
-from app.auth import required_logged_in
+from app.utils.auth import required_logged_in
 
 main_bp = Blueprint("main", __name__)
 
