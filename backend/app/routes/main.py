@@ -1,6 +1,7 @@
-from flask import render_template, session, redirect, url_for
-from app.middleware.auth import required_logged_in
-from . import main_bp
+from flask import Blueprint, render_template, session, redirect, url_for
+from app.auth import required_logged_in
+
+main_bp = Blueprint("main", __name__)
 
 
 @main_bp.route("/")

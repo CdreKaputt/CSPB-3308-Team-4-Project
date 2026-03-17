@@ -1,10 +1,11 @@
-from flask import render_template, redirect, url_for, flash, session
+from flask import Blueprint, render_template, redirect, url_for, flash, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.extensions import db
 from app.models import User
-from app.middleware.auth import required_logged_out
-from . import auth_bp
-from .forms import LoginForm, SignupForm
+from app.auth import required_logged_out
+from app.forms import LoginForm, SignupForm
+
+auth_bp = Blueprint("auth", __name__)
 
 
 @auth_bp.route("/login", methods=["GET", "POST"])
