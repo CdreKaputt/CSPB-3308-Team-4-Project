@@ -95,8 +95,9 @@ remaining team members that there are trip necessaties unaccounted for.
 ## Risks to Project Completion
 
 - *New Technologies:*
-    - Flask and React are new tools for many of us and will require some time to
+    - Flask and Jinja Templates are new tools for many of us and will require some time to
       familiarize ourselves with.
+    - NOTE: As per team agreement on 3/11/2026 Jinja Templates have replaced React as frontend rendering tool to leverage alignment with class materials and team experience.
 - *First-Time Team:*
     - As this will be our first time working together there will likely be a 
       small adjustment period as we establish norms for code reviews, version
@@ -123,7 +124,7 @@ remaining team members that there are trip necessaties unaccounted for.
         + Design/layout experience
         + Database structure and query experiecne
         + Cloud deployment/management experience
-        + Fullstack (React) development experience
+        + Fullstack (Template Views) development experience
 - *First-Time Team Risk Mitigation:*
     - We will establish a dedicated *git Flow* practice as well as a baseline 
       of what constitutes *"done"* for any given feature (i.e. establish what 
