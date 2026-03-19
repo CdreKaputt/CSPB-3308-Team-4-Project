@@ -11,18 +11,8 @@
                 <p>Welcome back! Please enter your info</p>
                 <form class="login-form" action="{{ url_for('auth.login') }}" method="POST">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                    {{ form.username(placeholder="Username") }}<br>
-                    {% if form.username.errors %}
-                        {% for error in form.username.errors %}
-                            <span class="field-error">{{ error }}</span>
-                        {% endfor %}
-                    {% endif %}
-                    {{ form.password(placeholder="Password") }}<br>
-                    {% if form.password.errors %}
-                        {% for error in form.password.errors %}
-                            <span class="field-error">{{ error }}</span>
-                        {% endfor %}
-                    {% endif %}
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <input type="password" name="password" placeholder="Password" required><br>
                     <button class="login-button" type="submit">Login</button>
                 </form>
                 <p>Not yet a member? <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a></p>
