@@ -1,21 +1,8 @@
-from app.models.user import User
-# from app.models.trip import Trip
-# from app.models.membership import Membership
-# from app.models.item import Item
-# from app.models.event import Event
-# from app.models.attendee import Attendee
-# from app.models.expense import Expense
-# from app.models.split import Split
-
-# __all__ Indicates to pylance that models declared
-# here are intended for re-export
-__all__ = [
-    "User",
-    # "Trip",
-    # "Membership",
-    # "Item",
-    # "Event",
-    # "Attendee",
-    # "Expense",
-    # "Split",
-]
+from .user import User as User
+# from .trip import Trip
+# from .membership import Membership
+# from .item import Item
+# from .event import Event
+# from .attendee import Attendee
+# from .expense import Expense
+# from .split import Split

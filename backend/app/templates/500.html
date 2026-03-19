@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div class="error-container">
+        <h2>500 - Server Error</h2>
+        <p>Something went wrong on our end. Please try again later.</p>
+        <a class="nav-link" href="{{ url_for('main.home') }}">Go Home</a>
+    </div>
+{% endblock %}

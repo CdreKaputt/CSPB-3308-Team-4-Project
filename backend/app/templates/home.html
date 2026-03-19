@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flake</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://kit.fontawesome.com/42d515b2f1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a class="logo-container" href="{{ url_for('main.dashboard') if session.get('user') else url_for('main.about')}}">
+                <img class="nav-logo" src="../static/images/flake-logo.png" alt="">
+            </a> 
+
+            <div class="nav-auth">
+                {% if session.get('user') %}
+                    <div class="user-dropdown">
+                        <span class="nav-welcome-message">Welcome, {{ session['user'] }}!</span>
+                        <div class="user-icon">
+                            <i class='far fa-user-circle'></i>
+                        </div>
+
+                        <div class="dropdown-content">
+                            <div class="dropdown-links">
+                                <a class="nav-link" href="">My Trips - A Dummy Link</a> <!-- update with url_for trips page once made -->
+                                <a class="nav-link" href="">Another Dummy Link</a>
+                                <a class="nav-link" href="{{ url_for('main.about') }}">About Flake - this link works</a>
+                            </div>
+                            
+                            <hr>
+                            <form class="logout-form" action="{{ url_for('auth.logout') }}" method="POST" style="display: inline;">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button class="nav-button" type="submit">
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a> |
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- All Templates render here -->
+    <main> 
+        {% block content %}{% endblock %}
+    </main>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                <div class="message {{category}}">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+</body>
+
+</html>

@@ -3,7 +3,7 @@ import os
 
 class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+    SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 class ProductionConfig(Config):
