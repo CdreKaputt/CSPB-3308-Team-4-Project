@@ -36,6 +36,12 @@ def signup():
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
         password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+        
+        # Check that password and confirm password match
+        if password != confirm_password:
+            flash("Passwords did not match.", "error")
+            return render_template("signup.html")
         # Check that the username and email are not already registered
         if User.query.filter_by(username=username).first():
             flash("Username already taken.", "error")
