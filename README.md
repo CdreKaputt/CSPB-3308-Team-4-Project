@@ -92,6 +92,8 @@ remaining team members that there are trip necessaties unaccounted for.
     - Star Rating System 
     - Public Events Page
 
+7. REACH Goal: Refactor frontend to utilize React for views
+
 ## Risks to Project Completion
 
 - *New Technologies:*
