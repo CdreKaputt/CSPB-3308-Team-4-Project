@@ -13,6 +13,13 @@ def test_client():
             yield testing_client
 
 
+@pytest.fixture(autouse=True)
+def clear_session(test_client):
+    yield
+    with test_client.session_transaction() as session:
+        session.clear()
+
+
 @pytest.fixture(scope="module")
 def init_database(test_client):
     db.create_all()
@@ -34,8 +41,16 @@ def init_database(test_client):
     db.drop_all()
 
 
-@pytest.fixture(autouse=True)
-def clear_session(test_client):
-    yield
-    with test_client.session_transaction() as session:
-        session.clear()
+@pytest.fixture(scope="module")
+def log_in_default_user(test_client, init_database):
+    pass
+
+
+@pytest.fixture(scope="module")
+def log_in_member_user(test_client, init_database):
+    pass
+
+
+@pytest.fixture(scope="module")
+def log_in_non_member_user(test_client, init_database):
+    pass
