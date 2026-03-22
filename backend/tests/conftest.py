@@ -24,6 +24,7 @@ def clear_session(test_client):
 def init_database(test_client):
     db.create_all()
 
+    # Create Test Users
     default_user = User(
         username="test_user",
         email="testuser@flake.com",
@@ -31,7 +32,23 @@ def init_database(test_client):
         last_name="User",
         password_digest=generate_password_hash("testpassword"),
     )
+    member_user = User(
+        username="member_user",
+        email="memberuser@flake.com",
+        first_name="Member",
+        last_name="User",
+        password_digest=generate_password_hash("testpassword"),
+    )
+    non_member_user = User(
+        username="non_member_user",
+        email="nonmemberuser@flake.com",
+        first_name="Test",
+        last_name="User",
+        password_digest=generate_password_hash("testpassword"),
+    )
     db.session.add(default_user)
+    db.session.add(member_user)
+    db.session.add(non_member_user)
 
     # Add any additional seed data here
 
