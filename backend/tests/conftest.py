@@ -1,8 +1,9 @@
 import pytest
+from datetime import date
 from werkzeug.security import generate_password_hash
 from app import create_app
 from app.extensions import db
-from app.models import User
+from app.models import User, Trip, Membership
 
 
 @pytest.fixture(scope="module")
@@ -49,6 +50,23 @@ def init_database(test_client):
     db.session.add(default_user)
     db.session.add(member_user)
     db.session.add(non_member_user)
+    db.session.flush()
+
+    # Create Test Trip
+    trip = Trip(
+        trip_name="Test Trip", 
+        leader_id=1, # Default User
+        start_date=date(2026, 4, 1),
+        end_date=date(2026, 4, 7)
+    )
+    db.session.add(trip)
+    db.session.flush()
+
+    # Create Test Membership between "trip" and "member_user"
+    membership = Membership(trip_id=trip.id, member_id=member_user.id)
+    db.session.add(membership)
+    
+    db.session.commit()
 
     # Add any additional seed data here
 
