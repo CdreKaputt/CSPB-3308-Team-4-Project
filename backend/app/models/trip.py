@@ -23,6 +23,14 @@ class Trip(db.Model):
         default=lambda: datetime.now(timezone.utc),
         onupdate=lambda: datetime.now(timezone.utc),
     )
+    
+    # Memberships association, this will auto delete associated memberships if 
+    # a trip is deleted
+    memberships = db.relationship(
+        'Membership',
+        backref='trip',
+        cascade='all, delete-orphan'
+    )
 
 
     # Possibly add relationship to leader

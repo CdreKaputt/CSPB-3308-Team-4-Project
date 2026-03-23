@@ -10,7 +10,7 @@ class Membership(db.Model):
     __table_args__ = (UniqueConstraint("trip_id", "member_id"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    trip_id: Mapped[int] = mapped_column(Integer, ForeignKey("trips.id"))
+    trip_id: Mapped[int] = mapped_column(Integer, ForeignKey("trips.id", ondelete="CASCADE"))
     member_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
