@@ -45,5 +45,9 @@ class User(db.Model):
         self.last_name = last_name
         self.password_digest = password_digest
 
+        # Set datatime explicitly so it's available before flush or commit
+        self.created_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(timezone.utc)
+
     def __repr__(self):
         return f"<User {self.username}>"
