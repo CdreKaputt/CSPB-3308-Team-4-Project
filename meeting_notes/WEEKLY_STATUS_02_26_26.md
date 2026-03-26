@@ -2,9 +2,8 @@
 
 **Team #:** 4  
 **Project:** Flake  
-**Team Number:** 5  
 **Team Name:** Mountain Hackers  
-**Report Link:** https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/blob/main/meeting_notes/WEEKLY_STATUS.md
+**Report Link:** https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/blob/main/meeting_notes/WEEKLY_STATUS_02_26_26.md
 
 ---
 
@@ -37,7 +36,7 @@ At the time of this report:
 - Columns include: Backlog, In Development, Ready for Review, In Review, Deployed or Complete
 - Tasks are assigned to individual team members
 
-<img width="3829" height="1196" alt="image" src="https://github.com/user-attachments/assets/4d63ded8-5a61-45cc-a7a3-3f92b24ab2db" />
+![trello-board-snapsoht](https://github.com/user-attachments/assets/4d63ded8-5a61-45cc-a7a3-3f92b24ab2db)
 
 ---
 
