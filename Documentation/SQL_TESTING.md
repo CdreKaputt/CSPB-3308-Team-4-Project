@@ -99,7 +99,7 @@ Description: Represents pack list (gear) items associated with the trip and assi
 
 ### `expenses`
 
-Description: Represents cost entries for trip
+Description: **Note**: Expense-related functionality is a reach goal for our team. Represents cost entries for trip
 
 | Name              | Type             | Constraints                           | Description
 |-------------------|------------------|---------------------------------------|-------------------------------------|
@@ -118,7 +118,7 @@ Description: Represents cost entries for trip
 
 ### `member_expenses`
 
-Description: Joins `memebers` to `expenses`
+Description: **Note**: Expense-related functionality is a reach goal for our team. Joins `memebers` to `expenses`
 
 | Name              | Type             | Constraints                           | Description
 |-------------------|------------------|---------------------------------------|-------------------------------------|
