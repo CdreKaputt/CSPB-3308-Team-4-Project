@@ -68,6 +68,10 @@ Key accomplishments include:
 - New Task
 - New Task
 
+project concerns
+- sooner we get cards in the better
+- priortize routes, models and templates for 
+
 ---
 
 ## Blockers and Issues
@@ -86,18 +90,42 @@ No major technical blockers were encountered this week.
 ## Team Reflection
 The team reported:
 - report
+- report
 - report   
 
 [INSERT SUMMARY SENTENCE ON TEAM REFLECTION]
 
 ---
 
-## Individual Contributions This Week
-- **Aaron Brunswig:** [INSERT AARON'S CONTRIBUTION]
-- **Yan Gu:** [INSERT YAN'S CONTRIBUTION] 
-- **Spencer Iascone:**  [INSERT SPENCER'S CONTRIBUTION]
-- **Joshua Morrison:**  [INSERT JOSHUA'S CONTRIBUTION]
-- **London Walker:** [INSERT LONDON'S CONTRIBUTION]  
+## Stand Up/ndividual Contributions This Week
+**Aaron Brunswig:** 
++ What I did this week: Initial testing implimented, added trips and memberships
+  models to make sure tests work
++ What I plan to do next week: finish up trips page tests (using pytest), push 
+  test branch up to origin, merge working tests, open to hopping into any other
+  rotues, models or tests
++ Roadblocks: No major hangups after solving testing library concerns. How do we
+  want routes foreach page
+**Yan Gu:**
++ What I did this week: Wrapping up lab 8, get started on JS, upskiling started 
+  on milestone 6. 
++ What I plan to do next week: Catch up on overview page, think about how to 
+  design overview page, check on trello
++ Roadblocks: Started testing claud code, agentic coding
+**Spencer Iascone:**
++ What I did this week: Restructured our meeting notes, talked professor Guinn
++ What I plan to do next week: Update routes for use with templates (add to 
+  trello), can float around on templates or routes or models
++ Roadblocks: C
+**Joshua Morrison:** 
++ What I did this week: Putting together the milestone 5 schema document
++ What I plan to do next week: Figure out next steps 
++ Roadblocks: Course work, not sure on next responsibility, figure outpack list 
+  pieces
+**London Walker:** 
++ What I did this week: Started on trips model, working on events model
++ What I plan to do next week: Ploish up events model
++ Roadblocks: Speed
 
 ---
 

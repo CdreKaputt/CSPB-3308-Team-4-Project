@@ -92,12 +92,27 @@ The team reported:
 
 ---
 
-## Individual Contributions This Week
-- **Aaron Brunswig:** [INSERT AARON'S CONTRIBUTION]
-- **Yan Gu:** [INSERT YAN'S CONTRIBUTION] 
-- **Spencer Iascone:**  [INSERT SPENCER'S CONTRIBUTION]
-- **Joshua Morrison:**  [INSERT JOSHUA'S CONTRIBUTION]
-- **London Walker:** [INSERT LONDON'S CONTRIBUTION]  
+## Stand Up/ndividual Contributions This Week
+**Aaron Brunswig:** 
+    + What I did this week:
+    + What I plan to do next week:
+    + Roadblocks:
+**Yan Gu:**
+    + What I did this week:
+    + What I plan to do next week:
+    + Roadblocks: 
+**Spencer Iascone:**
+    + What I did this week:
+    + What I plan to do next week:
+    + Roadblocks:
+**Joshua Morrison:** 
+    + What I did this week:
+    + What I plan to do next week:
+    + Roadblocks:
+**London Walker:** 
+    + What I did this week:
+    + What I plan to do next week:
+    + Roadblocks:  
 
 ---
 
