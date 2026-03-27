@@ -9,11 +9,11 @@
 
 ## Reporting Period
 
-**Week:** Spring Break Week - No Meeting
-**Meeting Held:** NO  
-**Meeting Date:** N/A
-**Meeting Duration:** N/A
-**Meeting Format:** N/A  
+**Week:** SPRING BREAK
+**Meeting Held:** No  
+**Meeting Date:** N/A  
+**Meeting Duration:** N/A   
+**Meeting Format:** N/A   
 
 ---
 
@@ -23,12 +23,6 @@ specified reporting period.
 
 It is intended to provide a concise snapshot of progress, plans, and risks, and 
 will be added weekly throughout the project.
-
-This weekly status format is designed to:
-- Track ongoing progress over time
-- Surface risks and blockers early
-- Provide accountability for individual contributions
-- Supplement the project management tool used by the team
 
 ---
 

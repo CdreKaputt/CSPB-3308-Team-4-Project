@@ -11,7 +11,7 @@
 
 **Week:** 9 
 **Meeting Held:** Yes  
-**Meeting Date:** March 26  
+**Meeting Date:** March 26, 2026  
 **Meeting Duration:** 30 minutes  
 **Meeting Format:** Zoom  
 
