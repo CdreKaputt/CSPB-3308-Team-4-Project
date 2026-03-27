@@ -9,11 +9,11 @@
 
 ## Reporting Period
 
-**Week:** Spring Break Week (Async Standup on Slack) 
-**Meeting Held:** Yes  
-**Meeting Date:** March 05  
-**Meeting Duration:** 30 minutes  
-**Meeting Format:** Zoom  
+**Week:** Spring Break Week - No Meeting
+**Meeting Held:** NO  
+**Meeting Date:** N/A
+**Meeting Duration:** N/A
+**Meeting Format:** N/A  
 
 ---
 

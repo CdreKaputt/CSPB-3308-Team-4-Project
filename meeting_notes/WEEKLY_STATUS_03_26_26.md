@@ -11,7 +11,7 @@
 
 **Week:** 9 
 **Meeting Held:** Yes  
-**Meeting Date:** March 05  
+**Meeting Date:** March 26  
 **Meeting Duration:** 30 minutes  
 **Meeting Format:** Zoom  
 
@@ -50,50 +50,45 @@ This week, the team focused on **[INSERT MAIN FOCUS]**.
 Teams are focusing on [INSET FOCUS SUMMARY1-2 sentents].
 
 Key accomplishments include:
-- accomplishment
-- accomplishment
-- accomplishment 
+- Testing implimentation
+- Auth Views
+- Additional Models added
 
 ---
 
 ## Completed Tasks
-- Task
-- Task
-- Task 
+- Auth Views
+- Trips and Membership Models
+- Trips Tests
+- Milestone 5 Schema State
 
 ---
 
 ## Planned Tasks for Next Week
-- New Task
-- New Task
-- New Task
-
-project concerns
-- sooner we get cards in the better
-- priortize routes, models and templates for 
+- Rewrite remaining api routes to views routes
+- Add trello cards for routes, models, tests, views
+- Start events and pack list features
+- Resolve remaining testing issues
+- Upskill on js materials
 
 ---
 
 ## Blockers and Issues
-[IF BLOCKERS REPLACE LINE BELOW, ELSE REMOVE THIS LINE]
 No major technical blockers were encountered this week. 
 
 ---
 
 ## Risks and Mitigation
-**Identified Risk:** [INSERT IDENTIFIED RISK or N/A]  
-- *Mitigation:* [INSERT MITIGATION STRATEGY or N/A]
-
+**Identified Risk:** N/A  
+- *Mitigation:* N/A
 
 ---
 
 ## Team Reflection
 The team reported:
-- report
-- report
-- report   
+- Project feels like it is in a stable palace for all of us to start 
+  picking/assigning remaining feature work
 
-[INSERT SUMMARY SENTENCE ON TEAM REFLECTION]
 
 ---
 
@@ -114,9 +109,11 @@ The team reported:
 + Roadblocks: Started testing claud code, agentic coding
 **Spencer Iascone:**
 + What I did this week: Restructured our meeting notes, talked professor Guinn
+  about project scope and needed features, pushed auth views over break
 + What I plan to do next week: Update routes for use with templates (add to 
-  trello), can float around on templates or routes or models
-+ Roadblocks: C
+  trello), add cards to trello for models, views and tests as well as routes.
+  Can float around on templates or routes or models. 
++ Roadblocks: Catch up on course materials
 **Joshua Morrison:** 
 + What I did this week: Putting together the milestone 5 schema document
 + What I plan to do next week: Figure out next steps 
@@ -130,4 +127,4 @@ The team reported:
 ---
 
 ## Notes
-[INSERT ADDITIONAL NOTES HERE]
+N/A

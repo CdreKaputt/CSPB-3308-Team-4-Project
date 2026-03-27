@@ -11,7 +11,7 @@
 
 **Week:** 8 
 **Meeting Held:** Yes  
-**Meeting Date:** March 05  
+**Meeting Date:** March 12  
 **Meeting Duration:** 30 minutes  
 **Meeting Format:** Zoom  
 
