@@ -78,14 +78,19 @@ def init_database(test_client):
 
 @pytest.fixture(scope="module")
 def log_in_default_user(test_client, init_database):
-    pass
+    with test_client.session_transaction() as session:
+        session["user"] = "test_user"
+    # No need to run session.clear(). 
+    # clear_session already does that. 
 
 
 @pytest.fixture(scope="module")
 def log_in_member_user(test_client, init_database):
-    pass
+    with test_client.session_transaction() as session:
+        session["user"] = "member_user"
 
 
 @pytest.fixture(scope="module")
 def log_in_non_member_user(test_client, init_database):
-    pass
+    with test_client.session_transaction() as session:
+        session["user"] = "non_member_user"
