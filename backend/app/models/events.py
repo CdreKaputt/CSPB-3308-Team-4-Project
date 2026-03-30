@@ -5,7 +5,7 @@ from app.extensions import db
 
 class Events(db.Model):
     __tablename__ = "events"
-    id: Mapped[int] = mapped_column(primary_key=True)
+    event_id: Mapped[int] = mapped_column(primary_key=True)
     event_name: Mapped[str] = mapped_column(String(255), nullable=False)
     description: Mapped[str] = mapped_column(String(255), nullable=False)
     event_date: Mapped[date] = mapped_column(Date, nullable=False)
