@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="edit-expense-form-continer">
+    <h2>Edit {{ expense.description }} for {{ trip.trip_name }}</h2>
+
+    <form class="edit-expense-form" method="POST" action="{{ url_for('expenses.edit_expense', expense_id=expense.id) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="payer_id" value="{{ expense.payer_id }}">
+
+        <input type="text" name="description" value="{{expense.description}}" required>
+        <input type="number" step="0.01" name="amount" value="{{expense.amount}}" required>
+        <label for="">
+            Is Paid
+            <input type="checkbox" name="is_paid" {%if expense.is_paid%}checked{% endif %}>
+        </label>
+        <button type="submit">Update Expense</button>
+        <a href="{{ url_for('expenses.trip_expenses', trip_id=expense.trip_id) }}">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

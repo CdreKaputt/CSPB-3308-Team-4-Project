@@ -59,17 +59,21 @@ def new_expense(trip_id):
 @expenses_bp.route('/edit/<int:expense_id>', methods=['GET', 'POST'])
 def edit_expense(expense_id):
     
-    # expense = db.session.get(Expense, expense_id)
-    # if not expense:
-    #     abort(404)
+    expense = db.session.get(Expense, expense_id)
+    if not expense:
+        abort(404)
         
-    # if request.method == 'POST':
-    #     description = request.form.get("description")
-    #     amount_str = request.form.get("amount")
-    #     payer_id = request.form.get("payer_id")
-    #     is_paid = request.form.get("is_paid")
+    if request.method == 'POST':
+        expense.description = request.form.get("description")
+        expense.amount = Decimal(request.form.get("amount"))
+        expense.payer_id = int(request.form.get("payer_id"))
     
-    #     amount = Decimal(amount_str)
-    
-    #     expense.
-    return "expense banana"
+        # check value of checkbox for is_paid
+        expense.is_paid = True if request.form.get('is_paid') else False
+        
+        db.session.commit()
+
+        return redirect(url_for('expenses.trip_expenses', trip_id=expense.trip_id))
+
+    trip = db.session.get(Trip, expense.trip_id)
+    return render_template('edit_expense_form.html', expense=expense, trip=trip)
