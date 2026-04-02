@@ -50,9 +50,11 @@ def new_expense(trip_id):
         db.session.add(new_exp)
         db.session.commit()
         
-        return redirect(url_for("expense.trip_expenses", trip_id=trip_id))
+
         
-    return render_template("new_expense_form.html", trip_id=trip_id)
+        return redirect(url_for("expenses.trip_expenses", trip_id=trip_id))
+        
+    return render_template("new_expense_form.html", trip=trip)
 
 @expenses_bp.route('/edit/<int:expense_id>', methods=['GET', 'POST'])
 def edit_expense(expense_id):
