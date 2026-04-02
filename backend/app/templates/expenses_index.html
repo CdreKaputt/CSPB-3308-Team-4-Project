@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="expense-continer">
+    <h2>Expenses for {{ trip.trip_name }}</h2>
+
+    <table class="expense-table">
+        <thead>
+            <tr>
+                <tr>Description</tr>
+                <tr>Payer</tr>
+                <tr>Amount</tr>
+                <tr>Paid</tr>
+                <tr>Date Added</tr>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exp in expenses %}
+            <tr>
+                <td>{{ exp.description }}</td>
+                <td>User ID: {{ exp.payer_id }}</td>
+                <td>${{ exp.amount }}</td>
+                <td>{{ exp.is_paid }}</td>
+                <td>{{ exp.created_at.strftime('%Y-%m-%d') }}</td>
+                <td><a href="{{ url_for('expenses.edit_expense', expense_id=exp.id)}}">Edit</a></td>
+            </tr>
+            {% else %}
+                <tr>No expences for this trip yet.</tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total: </th>
+                <th colspan="4">{{ total }}</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="add-expense-button">
+        <a href="{{ url_for('expenses.new_expense', trip_id=trip.id) }}">+ Add an Expense</a>
+    </div>
+</div>
+
+{% endblock %}

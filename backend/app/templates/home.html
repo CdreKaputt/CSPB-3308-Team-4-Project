@@ -17,7 +17,7 @@
             <div class="nav-auth">
                 {% if session.get('user') %}
                     <div class="user-dropdown">
-                        <span class="nav-welcome-message">Welcome, {{ session['user'] }}!</span>
+                        <span class="nav-welcome-message">Welcome, {{ session['user']['username'] }}!</span>
                         <div class="user-icon">
                             <i class='far fa-user-circle'></i>
                         </div>

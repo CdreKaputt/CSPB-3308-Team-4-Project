@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, session, redirect, url_for
 from app.utils.auth import required_logged_in
+from app.models.membership import Membership
 
 main_bp = Blueprint("main", __name__)
 
@@ -15,6 +16,17 @@ def home():
 @required_logged_in
 def dashboard():
     # TODO: fetch trips associated with session["user"] via Trips model
+    
+    user_id = session['user']['id']
+    memberships = Membership.query.filter_by(member_id=user_id).all()
+    
+    trips = []
+    
+    for m in memberships:
+        trip = m.trip
+        trips.append(trip)
+        print(trip.id)
+    
     dummy_trips = [
         {
             "name": "Big Bend Rafting Trip",
@@ -41,7 +53,8 @@ def dashboard():
             "id": 1,
         },
     ]
-    return render_template("dashboard.html", trips=dummy_trips)
+    
+    return render_template("dashboard.html", trips=trips)
 
 
 @main_bp.route("/about")
