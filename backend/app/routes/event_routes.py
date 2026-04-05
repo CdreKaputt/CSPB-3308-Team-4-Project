@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from app.utils.auth import required_logged_in
 from app.extensions import db
-from app.models import Events
+from app.models import Events, Trips
 
 main_bp = Blueprint("events", __name__)
 
@@ -9,8 +9,9 @@ main_bp = Blueprint("events", __name__)
 @main_bp.route("/<int:trip_id>/events")
 @required_logged_in
 def trip_events(trip_id):
+    trip = Trips.query.get_or_404(trip_id)
     events = Events.query.filter_by(trip_id=trip_id).all()
-    return render_template("events_index.html", events=events, trip_id=trip_id)
+    return render_template("events_index.html", events=events, trip=trip)
 
 # new event
 @main_bp.route("/<int:trip_id>/new_event", methods=["GET", "POST"])
@@ -47,7 +48,7 @@ def new_event_form(trip_id):
 @required_logged_in
 def event_overview(event_id):
     event = Events.query.get_or_404(event_id)
-    return render_template("events_overview.html", event=event)
+    return render_template("event_overview.html", event=event)
 
 # edit event
 @main_bp.route("/<int:event_id>/edit_event", methods=["GET", "POST"])
