@@ -3,7 +3,7 @@ from datetime import date
 from werkzeug.security import generate_password_hash
 from app import create_app
 from app.extensions import db
-from app.models import User, Trip, Membership
+from app.models import User, Trip, Membership, Event
 
 
 @pytest.fixture(scope="module")
@@ -65,6 +65,24 @@ def init_database(test_client):
     # Create Test Membership between "trip" and "member_user"
     membership = Membership(trip_id=trip.id, member_id=member_user.id)
     db.session.add(membership)
+
+    # Create Test Event
+    # leader_event = Event(
+    #     event_name="Test Event",
+    #     description="Test event description",
+    #     date=date(2026, 4, 4),
+    #     trip_id=trip.id,
+    #     owner=default_user.id
+    # )
+    # member_event = Event(
+    #     event_name="Test Event for Member",
+    #     description="Test event for member description",
+    #     date=date(2026, 4, 5),
+    #     trip_id=trip.id,
+    #     owner=member_user.id
+    # )
+    # db.session.add(leader_event)
+    # db.session.add(member_event)
     
     db.session.commit()
 
