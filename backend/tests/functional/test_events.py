@@ -35,6 +35,18 @@ def test_events_get_one_unauthenticated(test_client, init_database):
 # GET /events/new
 # --------------------------------------
 
+def test_events_new_get(test_client, log_in_default_user):
+    # Requires active session of any type
+    response = test_client.get("/events/new")
+    assert response.status_code == 200
+    assert b"<form" in response.data
+
+
+def test_events_new_get_unauthenticated(test_client):
+    response = test_client.get("/events/new")
+    assert response.status_code == 302
+    assert response.headers["Location"] == "/login"
+
 # --------------------------------------
 # POST /events/new
 # --------------------------------------
