@@ -85,7 +85,7 @@ def test_events_new_post_valid_as_member(test_client, init_database, log_in_memb
     assert str(event.date) == "2026-05-07"
 
 
-def test_events_new_post_non_member(test_client, init_database, log_in_member_user):
+def test_events_new_post_non_member(test_client, init_database, log_in_non_member_user):
     # This assumes memebers can create events
     response = test_client.post(
         "/events/new",
@@ -156,6 +156,118 @@ def test_events_edit_get_unauthenticated(test_client, init_database):
 # POST /events/edit/<int:event_id>
 # --------------------------------------
 
+def test_events_edit_post_valid(test_client, init_database, log_in_default_user):
+    response = test_client.post(
+        f"/events/edit/{EVENT_ID}",
+        data={
+            "event_name": "Updated Test Event",
+            "description": "Description of updated test event",
+            "date": "2026-05-09",
+        },
+    )
+    assert response.status_code == 302  # Redirect to new event page or trip page
+    
+    event = Event.query.filter_by(event_name="Updated Test Event").first()
+    assert event is not None
+    assert str(event.description) == "Description of updated test event"
+    assert str(event.date) == "2026-05-09"
+
+
+def test_events_edit_post_valid_as_member(test_client, init_database, log_in_member_user):
+    # This assumes memebers can create events
+    response = test_client.post(
+        f"/events/edit/{EVENT_ID}",
+        data={
+            "event_name": "Updated Member Event",
+            "description": "Description of updated member event",
+            "date": "2026-05-10",
+        },
+    )
+    assert response.status_code == 302  # Redirect to new event page or trip page
+    
+    event = Event.query.filter_by(event_name="Updated Member Event").first()
+    assert event is not None
+    assert str(event.description) == "Description of updated member event"
+    assert str(event.date) == "2026-05-10"
+
+
+def test_events_edit_post_non_member(test_client, init_database, log_in_non_member_user):
+    # This assumes memebers can create events
+    response = test_client.post(
+        f"/events/edit/{EVENT_ID}",
+        data={
+            "event_name": "Updated Non-member Event",
+            "description": "Description of updated non-member event",
+            "date": "2026-05-11",
+        },
+    )
+    # event = Event.query.filter_by(event_name="Updated Non-member Event").first()
+    # assert event is None
+    assert response.status_code == 401  # Unauthorized 
+
+
+def test_events_edit_post_missing_fields(test_client, init_database, log_in_default_user):
+    response = test_client.post(
+        f"/events/edit/{EVENT_ID}",
+        data={"event_name": "", "description": "", "date": ""},
+    )
+    # 200 status code expected even though submission was invalid
+    # This is standard behavior in Flask
+    assert response.status_code == 200
+    assert b"required" in response.data.lower()
+
+
+def test_events_edit_post_unauthenticated(test_client):
+    response = test_client.post(
+        f"/events/edit/{EVENT_ID}",
+        data={
+            "event_name": "Updated Unathorized Event",
+            "description": "Description of updated unathorized event",
+            "date": "2026-05-12",
+        },
+    )
+    # event = Event.query.filter_by(event_name="Updated Unathorized Event").first()
+    # assert event is None
+    assert response.status_code == 302
+    assert response.headers["Location"] == "/login"
+
 # --------------------------------------
 # POST /events/delete/<int:event_id>
 # --------------------------------------
+
+# Note: delete_as_leader runs last to preserve the trip for other delete tests
+
+
+def test_events_delete_as_non_member(test_client, init_database, log_in_non_member_user):
+    response = test_client.post(f"/events/delete/{EVENT_ID}")
+    assert response.status_code == 401
+
+    trip = Event.query.get(EVENT_ID)
+    assert trip is not None
+
+
+def test_events_delete_unauthenticated(test_client, init_database):
+    response = test_client.post(f"/events/delete/{EVENT_ID}")
+    assert response.status_code == 302
+    assert response.headers["Location"] == "/login"
+
+    event = Event.query.get(EVENT_ID)
+    assert event is not None
+
+
+# def test_events_delete_as_leader(test_client, init_database, log_in_default_user):
+#     response = test_client.post(f"/events/delete/{EVENT_ID}")
+#     assert response.status_code == 302
+#     assert response.headers["Location"] == "/trips"
+
+#     event = Event.query.get(EVENT_ID)
+#     assert event is None
+
+
+# def test_events_delete_as_member(test_client, init_database, log_in_member_user):
+#     response = test_client.post(f"/events/delete/{EVENT_ID}")
+#     assert response.status_code == 302
+#     assert response.headers["Location"] == f"/events/{EVENT_ID}"
+
+#     event = Event.query.get(EVENT_ID)
+#     assert event is not None
