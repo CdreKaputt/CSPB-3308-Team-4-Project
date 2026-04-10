@@ -11,7 +11,11 @@ class Trip(db.Model):
     leader_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"))
     start_date: Mapped[date] = mapped_column(Date, nullable=False)
     end_date: Mapped[date] = mapped_column(Date, nullable=False)
-    public: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    public: Mapped[bool] = mapped_column(
+        Boolean(name="is_public_trip"), 
+        nullable=False, 
+        default=False
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
@@ -36,6 +40,12 @@ class Trip(db.Model):
     # Possibly add relationship to leader
     # leader: Mapped["User"] = relationship("User", foreign_keys=[leader_id])
 
+    # expenses association, auto delete expenses if trip is deleted
+    expenses = db.relationship(
+        'Expense',
+        backref='trip',
+        cascade='all, delete-orphan'
+    )
 
     def __init__(
         self,

@@ -17,14 +17,14 @@
             <div class="nav-auth">
                 {% if session.get('user') %}
                     <div class="user-dropdown">
-                        <span class="nav-welcome-message">Welcome, {{ session['user'] }}!</span>
+                        <span class="nav-welcome-message">Welcome, {{ session['user']['username'] }}!</span>
                         <div class="user-icon">
                             <i class='far fa-user-circle'></i>
                         </div>
 
                         <div class="dropdown-content">
                             <div class="dropdown-links">
-                                <a class="nav-link" href="">My Trips - A Dummy Link</a> <!-- update with url_for trips page once made -->
+                                <a class="nav-link" href="{{ url_for('main.dashboard') }}">My Trips</a> <!-- update with url_for trips page once made -->
                                 <a class="nav-link" href="">Another Dummy Link</a>
                                 <a class="nav-link" href="{{ url_for('main.about') }}">About Flake - this link works</a>
                             </div>

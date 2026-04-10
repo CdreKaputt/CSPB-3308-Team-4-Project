@@ -19,8 +19,8 @@ def login():
         if not user or not check_password_hash(user.password_digest, password):
             flash("Invalid username or password.", "error")
             return render_template("login.html")
-        # Store the username in the session to keep the user logged in
-        session["user"] = user.username
+        # Store the username and id in the session to keep the user logged in
+        session["user"] = { "username": user.username, "id": user.id }
         return redirect(url_for("main.dashboard"))
 
     # GET: render the empty login form

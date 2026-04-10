@@ -18,6 +18,8 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+    SECRET_KEY = "test-secret-key"  # Set test key directly
+    WTF_CSRF_ENABLED = False  # CSRF conflicts with test client
 
 
 config = {

@@ -18,19 +18,19 @@
                 {% for trip in trips %}
                     <div class="trip-index-item">
                         <div class="trip-info">
-                            <h3 class="trip-name">{{trip.name}}</h3>
+                            <h3 class="trip-name">{{trip.trip_name}}</h3>
                             <div class="trip-details">
-                                <span>Departure Date: {{ trip.departure_date }}</span>
-                                <span>{{ trip.party_size }} members</span>
+                                <span>Departure Date: {{ trip.start_date }}</span>
+                                <!-- <span>{{ trip.party_size }} members</span> -->
                             </div>
                         </div>
-                        <a class="nav-link" href="">View Details →</a>
+                        <a class="nav-link" href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">View Details →</a>
                     </div>
                 {% else %}
                     <div class="empty-trips">
                         <p>No trips yet. Click New Trip and start palling today!</p>
                     </div>
-                    <div class="trip-index-item">
+                    <!-- <div class="trip-index-item">
                         <div class="trip-info">
                             <h3 class="trip-name">Sample: Estes Park Getaway</h3>
                             <div class="trip-details">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <a class="nav-link" href="">View Details →</a>
-                    </div>
+                    </div> -->
                 {% endfor %}
             </div>
         </div>

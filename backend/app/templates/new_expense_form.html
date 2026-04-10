@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+    <div class="new-expense-form-container">
+        <h2>Add an Expense to {{ trip.trip_name }}</h2>
+
+        <form class="new-expense-form" method="POST" action="{{ url_for('expenses.new_expense', trip_id=trip.id) }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="payer_id" value="{{ session['user']['id'] }}">
+
+            <label class="desc-label">Description:</label>
+            <input type="text" id="description" name="description" placeholder="What was this for?" required>
+            
+            <label class="amount-label">Amount:</label>
+            <input type="number" id="amount" step="0.01" name="amount" required>
+
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+
+{% endblock %}
