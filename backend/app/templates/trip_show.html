@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+    <div class="main-trip-container">
+        
+        <div class="main-trip-heading">
+            <h2>{{ trip.trip_name }}</h2>
+            <div class="trip-dates">
+                {{ trip.start_date.strftime('%b %d') }} - {{ trip.end_date.strftime('%b %d, %Y')}}
+            </div>
+        </div>
+
+        <div class="trip-container">
+            <div class="trip-heading">
+                <h3>Trip Management</h3>
+            </div>
+
+            <div class="trip-details-links">
+                <a href="{{ url_for('expenses.trip_expenses', trip_id=trip.id)}}">Expense List</a>
+                <a href="">Event Itinerary</a>
+                <a href="">Pack List</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
