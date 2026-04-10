@@ -1,20 +1,20 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from app.utils.auth import required_logged_in
 from app.extensions import db
-from app.models import Events, Trips
+from app.models import Events, Trip
 
-main_bp = Blueprint("events", __name__)
+events_bp = Blueprint("events", __name__)
 
 # events index
-@main_bp.route("/<int:trip_id>/events")
+@events_bp.route("/<int:trip_id>/events")
 @required_logged_in
 def trip_events(trip_id):
-    trip = Trips.query.get_or_404(trip_id)
+    trip = Trip.query.get_or_404(trip_id)
     events = Events.query.filter_by(trip_id=trip_id).all()
     return render_template("events_index.html", events=events, trip=trip)
 
 # new event
-@main_bp.route("/<int:trip_id>/new_event", methods=["GET", "POST"])
+@events_bp.route("/<int:trip_id>/new_event", methods=["GET", "POST"])
 @required_logged_in
 def new_event_form(trip_id):
     if request.method == "GET":
@@ -44,19 +44,19 @@ def new_event_form(trip_id):
             return render_template("new_event_form.html", trip_id=trip_id)
 
 # event overview
-@main_bp.route("/<int:event_id>/event_overview")
+@events_bp.route("/<int:event_id>/event_overview")
 @required_logged_in
 def event_overview(event_id):
     event = Events.query.get_or_404(event_id)
     return render_template("event_overview.html", event=event)
 
 # edit event
-@main_bp.route("/<int:event_id>/edit_event", methods=["GET", "POST"])
+@events_bp.route("/<int:event_id>/edit_event", methods=["GET", "POST"])
 @required_logged_in
 def edit_event_form(event_id):
     event = Events.query.get_or_404(event_id)
     if request.method == "GET":
-        return render_template("edit_event.html", event=event)
+        return render_template("edit_event_form.html", event=event)
     if request.method == "POST":
         event.event_name = request.form.get("event_name")
         event.description = request.form.get("description")
@@ -70,10 +70,10 @@ def edit_event_form(event_id):
             # Roll back any partial changes if the database write fails
             db.session.rollback()
             flash("Could not create event. Please try again.", "error")
-            return render_template("edit_event.html", event=event, trip_id=trip_id)
+            return render_template("edit_event_form.html", event=event, trip_id=trip_id)
 
 # delete event
-@main_bp.route("/<int:event_id>/delete", methods=["POST"])
+@events_bp.route("/<int:event_id>/delete", methods=["POST"])
 @required_logged_in
 def event_delete(event_id):
     event = Events.query.get_or_404(event_id)

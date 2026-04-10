@@ -20,7 +20,7 @@
                     <div class="event-info">
                         <h3 class="event-name">{{ event.event_name }}</h3>
                     </div>
-                    <a class="nav-link" href="{{ url_for('events.event_overview', event_id=event.id) }}">View Details</a>
+                    <a class="nav-link" href="{{ url_for('events.event_overview', event_id=event.event_id) }}">View Details</a>
                     </div>
                 {% else %}
                     <div class="empty-events">
