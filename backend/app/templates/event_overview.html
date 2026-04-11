@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="events-container">
+    <header class="events-header">
+        <h2>{{ event.event_name }}</h2>
+    </header>
+    <div class="event-details">
+        <p>{{ event.event_date }}</p>
+        <p>{{ event.description }}</p>
+        <!-- edit -->
+        <a href="{{ url_for('events.edit_event_form', event_id=event.event_id) }}">Edit Event</a>
+        <!-- delete -->
+        <form action="{{ url_for('events.event_delete', event_id=event.event_id) }}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="submit" value="Delete Event"">
+        </form>
+    </div>
+            <div class=" events-back">
+            <a href="{{ url_for('events.trip_events', trip_id=event.trip_id) }}">Back to trip events</a>
+    </div>
+</div>
+{% endblock %}
