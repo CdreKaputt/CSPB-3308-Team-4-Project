@@ -6,7 +6,7 @@ from datetime import date, timedelta
 from faker import Faker
 from app import create_app
 from app.extensions import db
-from app.models import User, Trip, Events # Only the essentials
+from app.models import User, Trip, Events, Membership # Only the essentials
 from werkzeug.security import generate_password_hash
 
 app = create_app("development")
@@ -44,6 +44,13 @@ def seed_database():
         )
         db.session.add(main_trip)
         db.session.commit()
+
+        print("--- Adding User to Trip Membership ---")
+        membership = Membership(
+            member_id=demo_user.id,
+            trip_id=main_trip.id
+        )
+        db.session.add(membership)
         
         # 3. Generate Events for that Trip
         print("--- Generating Events ---")

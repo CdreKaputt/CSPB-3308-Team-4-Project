@@ -11,7 +11,7 @@ def create_app(config_name="default"):
     migrate.init_app(app, db)
     csrf.init_app(app)
 
-    from .routes import auth_bp, main_bp, expenses_bp, trips_bp
+    from .routes import auth_bp, main_bp, expenses_bp, trips_bp, events_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(main_bp)
