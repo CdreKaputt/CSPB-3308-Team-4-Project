@@ -84,10 +84,9 @@ Version Control: The team used GitHub version control function for team collabor
 ## Pages That Access Database Information (To be revised)
 
 - Login: users
-- Dashboard: users, groups, tasks
-- Group Page: groups, group_members, tasks, availability
-- Availability Page: availability
-- Task Management Page: tasks, users
+- Dashboard: users, trips
+- Expenses: expenses, trips
+- Events: events, trips, users
 
 ## Page Data Access Tests (High-Level) (To be revised)
 
@@ -130,9 +129,8 @@ This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-
 We natigated through all stages of software development lifecycle, including ideation, experince design, system architecturing, implementation, testing, deploying.
 
 Key takeaways: (to be revised)
-- Scope control matters. The MVP focus kept the project shippable.
-- Frequent integration reduces surprises later.
-- Clear task ownership and weekly check-ins kept progress steady.
-- Deployment and CI/CD work early paid off during final integration.
+- Creating a defined scope with a wiki was helpful to keep us on track.
+- Weekly check-ins helped make sure we were all on the same page.
+- *Deployment and CI/CD work early paid off during final integration.
 
 
