@@ -47,7 +47,7 @@ def new_event_form(trip_id):
             return render_template("new_event_form.html", trip=trip, user=user)
 
 # event overview
-@events_bp.route("/<int:event_id>/event_overview")
+@events_bp.route("/<int:event_id>/")
 @required_logged_in
 def event_overview(event_id):
     event = Events.query.get_or_404(event_id)
