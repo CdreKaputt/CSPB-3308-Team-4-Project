@@ -40,20 +40,18 @@ class Item(db.Model):
     )
 
     def __init__(
-            self,
-            id: int,
-            trip_id: int,
-            name: str,
-            user_id: int,
-            created_by: int,
-            description: str,
-            category: str,
-            quantity: int = 1,
-            is_completed: bool = False,
-            status: str = "active",
-        ):
-        self.id = id
-        self.id = trip_id
+        self,
+        trip_id: int,
+        name: str,
+        user_id: int,
+        created_by: int,
+        description: str,
+        category: str,
+        quantity: int = 1,
+        is_completed: bool = False,
+        status: str = "active",
+    ):
+        self.trip_id = trip_id
         self.name = name
         self.description = description
         self.quantity = quantity
@@ -64,4 +62,4 @@ class Item(db.Model):
         self.status = status
 
     def __repr__(self):
-        return f"<Item {self.name}"
+        return f"<Item: {self.name}"
