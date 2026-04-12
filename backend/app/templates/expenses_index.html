@@ -48,8 +48,14 @@
         </tfoot>
     </table>
 
-    <div class="add-expense-button">
-        <a href="{{ url_for('expenses.new_expense', trip_id=trip.id) }}">+ Add an Expense</a>
+    <div class="expense-index-buttons">
+        <div class="add-expense-button">
+            <a href="{{ url_for('expenses.new_expense', trip_id=trip.id) }}">+ Add an Expense</a>
+        </div>
+    
+        <div class="return-to-trip-button">
+            <a href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">Back To Trip Page</a>
+        </div>
     </div>
 </div>
 

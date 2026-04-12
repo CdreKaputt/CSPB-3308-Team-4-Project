@@ -89,9 +89,15 @@
     /* white-space: nowrap; */
 }
 
+/* add expense button / return to trip */
 
-/* add expense button */
-.add-expense-button > a {
+.expense-index-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.add-expense-button > a,
+.return-to-trip-button > a {
     display: inline-block;
     background-color: #333;
     color: white;
@@ -105,7 +111,8 @@
     transition: background 0.2s;
 }
 
-.add-expense-button > a:hover {
+.add-expense-button > a:hover,
+.return-to-trip-button > a:hover {
     background-color: #666;
 }
 
