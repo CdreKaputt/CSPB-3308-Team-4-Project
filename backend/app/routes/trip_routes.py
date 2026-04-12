@@ -76,3 +76,15 @@ def edit_trip(trip_id):
         return redirect(url_for('trips.trip_show', trip_id=trip.id))
         
     return render_template('edit_trip_form.html', trip=trip)
+
+
+@trips_bp.route('/delete/<int:trip_id>', methods=['POST'])
+def delete_trip(trip_id):
+    trip = db.session.get(Trip, trip_id)
+    if not trip:
+        abort(404)
+    
+    db.session.delete(trip)
+    db.session.commit()
+    
+    return redirect(url_for('main.dashboard'))

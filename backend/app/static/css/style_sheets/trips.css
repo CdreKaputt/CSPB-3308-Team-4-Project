@@ -154,7 +154,12 @@
     font-style: italic;
 }
 
-/* Udate trip link */
+/* Udate /delete trip links */
+
+.trip-show-buttons {
+    display: flex;
+    gap: 1rem;
+}
 
 .edit-trip-link {
     text-decoration: none;
@@ -171,6 +176,23 @@
 
 .edit-trip-link:hover {
     background-color: #666;
+}
+
+.delete-trip-form > button {
+    text-decoration: none;
+    background: none;
+    color: #dc3545;
+    border: 1px solid #eee;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.delete-trip-form > button:hover {
+    background: rgba(220, 53, 69, 0.1);
 }
 
 /* trip create/edit forms */
