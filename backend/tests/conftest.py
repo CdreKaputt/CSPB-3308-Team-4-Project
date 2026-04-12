@@ -3,7 +3,7 @@ from datetime import date
 from werkzeug.security import generate_password_hash
 from app import create_app
 from app.extensions import db
-from app.models import User, Trip, Membership, Event
+from app.models import User, Trip, Membership, Events, Item
 
 
 @pytest.fixture(scope="module")
@@ -67,22 +67,52 @@ def init_database(test_client):
     db.session.add(membership)
 
     # Create Test Event
-    # leader_event = Event(
-    #     event_name="Test Event",
-    #     description="Test event description",
-    #     date=date(2026, 4, 4),
-    #     trip_id=trip.id,
-    #     owner=default_user.id
-    # )
-    # member_event = Event(
-    #     event_name="Test Event for Member",
-    #     description="Test event for member description",
-    #     date=date(2026, 4, 5),
-    #     trip_id=trip.id,
-    #     owner=member_user.id
-    # )
-    # db.session.add(leader_event)
-    # db.session.add(member_event)
+    leader_event = Events(
+        event_name="Test Event",
+        description="Test event description",
+        event_date=date(2026, 4, 4),
+        owner_id=default_user.id,
+        trip_id=trip.id,
+    )
+    member_event = Events(
+        event_name="Test Event for Member",
+        description="Test event for member description",
+        event_date=date(2026, 4, 5),
+        owner_id=member_user.id,
+        trip_id=trip.id,
+    )
+    db.session.add(leader_event)
+    db.session.add(member_event)
+
+    # Create Test Item
+    leader_item = Item(
+        trip_id=trip.id,
+        name="Leader's Test Item",
+        user_id=default_user.id,
+        created_by=default_user.id,
+        description="Item added to list by trip leader",
+        category="Test Items",
+        # Use default for quantity, is_complete, and status
+    )
+    member_item = Item(
+        trip_id=trip.id,
+        name="Memeber's Test Item",
+        user_id=member_user.id,
+        created_by=member_user.id,
+        description="Item added to list by trip member",
+        category="Test Items",
+    )
+    shared_item = Item(
+        trip_id=trip.id,
+        name="Shared Test Item",
+        user_id=member_user.id,
+        created_by=default_user.id,
+        description="Item added by trip leader but assigned to member",
+        category="Test Items",
+    )
+    db.session.add(leader_item)
+    db.session.add(member_item)
+    db.session.add(shared_item)
     
     db.session.commit()
 
