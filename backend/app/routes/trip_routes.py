@@ -12,6 +12,14 @@ def trip_show(trip_id):
     trip = db.session.get(Trip, trip_id)
     if not trip:
         abort(404)
+        
+    # get members
+    memberships = trip.memberships
+    members = []
     
-    return render_template('trip_show.html', trip=trip)
+    for membership in memberships:
+        user = db.session.get(User, membership.member_id)
+        members.append(user)
+    
+    return render_template('trip_show.html', trip=trip, members=members)
     

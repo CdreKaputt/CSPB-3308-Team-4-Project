@@ -17,12 +17,36 @@
             </div>
 
             <div class="trip-details-links">
-                <a href="{{ url_for('expenses.trip_expenses', trip_id=trip.id)}}">Expense List</a>
                 <a href="">Event Itinerary</a>
                 <a href="">Pack List</a>
+                <a href="{{ url_for('expenses.trip_expenses', trip_id=trip.id)}}">Expense List</a>
+            </div>
+
+            <hr class="hr-divider">
+
+            <h3 class="trip-member-heading">Trip Members</h3>
+            <div class="trip-member-index">
+                {% for member in members %}
+                    <div class="trip-member-item">
+                        <div class="member-icon">
+                            {{ member.username[0] | upper }}
+                        </div>
+
+                        <div class="member-info">
+                            <p class="member-name">{{member.username}}</p>
+                            <span class="member-details">Joined: {{member.created_at.strftime('Y-%m-%d')}}</span>
+                            {% if trip.leader_id == member.id %}
+                                <span class="leader-badge">Leader</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="empty-members-list">
+                        <p>No members added to this trip yet.</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-
 
 {% endblock %}
