@@ -15,7 +15,6 @@ def home():
 @main_bp.route("/dashboard")
 @required_logged_in
 def dashboard():
-    # TODO: fetch trips associated with session["user"] via Trips model
     
     user_id = session['user']['id']
     memberships = Membership.query.filter_by(member_id=user_id).all()
@@ -26,34 +25,7 @@ def dashboard():
         trip = m.trip
         trips.append(trip)
         print(trip.id)
-    
-    dummy_trips = [
-        {
-            "name": "Big Bend Rafting Trip",
-            "departure_date": "Apr 15, 2026",
-            "party_size": 12,
-            "id": 2,
-        },
-        {
-            "name": "Star Gazing Weekend: Shelf Road",
-            "departure_date": "May 22, 2026",
-            "party_size": 4,
-            "id": 3,
-        },
-        {
-            "name": "Tour of the Moon",
-            "departure_date": "Sept 14, 2026",
-            "party_size": 2,
-            "id": 4,
-        },
-        {
-            "name": "Lake Tahoe Ski Trip",
-            "departure_date": "Dec 15, 2026",
-            "party_size": 8,
-            "id": 1,
-        },
-    ]
-    
+
     return render_template("dashboard.html", trips=trips)
 
 

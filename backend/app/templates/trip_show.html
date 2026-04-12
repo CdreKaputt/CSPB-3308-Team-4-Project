@@ -46,6 +46,12 @@
                     </div>
                 {% endfor %}
             </div>
+
+            <hr class="hr-divider">
+
+            <div>
+                <a class="edit-trip-link" href="{{ url_for('trips.edit_trip', trip_id=trip.id)}}">Update Trip</a>    
+            </div>
         </div>
     </div>
 
