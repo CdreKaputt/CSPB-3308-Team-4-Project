@@ -49,13 +49,13 @@ def test_trips_get_one_as_member(test_client, init_database, log_in_member_user)
 
 def test_trips_get_one_as_non_member(test_client, init_database, log_in_non_member_user):
     # Non-memebers should be redirected back to /trips.
-    response = test_client.get(f"/tests/{TRIP_ID}")
+    response = test_client.get(f"/trips/{TRIP_ID}")
     assert response.status_code == 302
     assert response.headers["Location"] == "/trips"
 
 
 def test_trips_get_one_unauthenticated(test_client, init_database):
-    response = test_client.get(f"/test/{TRIP_ID}")
+    response = test_client.get(f"/trips/{TRIP_ID}")
     assert response.status_code == 302
     assert response.headers["Location"] == "/login"
 
