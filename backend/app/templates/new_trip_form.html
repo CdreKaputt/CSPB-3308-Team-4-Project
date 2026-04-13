@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="new-trip-form-container">
+    <h2>Start Planning Your Next Great Adventure</h2>
+
+    <form class="new-trip-form" action="{{url_for('trips.create_trip')}}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="leader_id" value="{{ session['user']['id'] }}">
+    
+        <label>Trip Name</label>
+        <input type="text" name="trip_name" placeholder="e.g. Summer Colorado Trip, 2026" required>
+
+        <label>Start Date</label>
+        <input type="date" name="start_date" required>
+
+        <label>End Date</label>
+        <input type="date" name="end_date" required>
+
+        <button type="submit">Create Trip</button>
+        <a href="{{ url_for('main.dashboard')}}">Cancel</a>
+
+    </form>
+
+</div>
+
+{% endblock %}
