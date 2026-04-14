@@ -1,0 +1,122 @@
+.main-discover {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+.discover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.discover-header > h2 {
+    font-weight: bold;
+}
+
+.discover-nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.discover-nav-links > li {
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+.new-trip {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.new-trip:hover {
+    background-color: #666;
+}
+
+.discover-intro {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.discover-trips-container {
+    max-width: 100%;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.discover-trips-index {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.discover-trip-item {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.discover-trip-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.discover-trip-info {
+    flex: 1;
+}
+
+.discover-trip-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.discover-trip-name {
+    margin: 0;
+    color: inherit;
+    font-size: 1.25rem;
+}
+
+.trip-badge {
+    background: #f3f3f3;
+    color: #333;
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.discover-trip-details {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 1rem;
+}
+
+.discover-empty-trips {
+    text-align: center;
+    padding: 3rem;
+    background: #f9f9f9;
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+    color: #888;
+}

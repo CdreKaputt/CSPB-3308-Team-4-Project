@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div class="main-discover">
+        <header class="discover-header">
+            <h2>Discover Trips</h2>
+            <ul class="discover-nav-links">
+                {% if session.get('user') %}
+                    <li>
+                        <a class="nav-link" href="{{ url_for('main.dashboard') }}">My Trips</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a class="new-trip" href="{{ url_for('main.about') }}">About Flake</a>
+                </li>
+            </ul>
+        </header>
+        <div class="discover-intro">
+            <p>Browse public trips from the Flake community and learn more in the details.</p>
+        </div>
+        <div class="discover-trips-container">
+            <div class="discover-trips-index">
+                {% for trip in trips %}
+                    <div class="discover-trip-item">
+                        <div class="discover-trip-info">
+                            <div class="discover-trip-title-row">
+                                <h3 class="discover-trip-name">{{ trip.trip_name }}</h3>
+                                <span class="trip-badge">Public</span>
+                            </div>
+                            <div class="discover-trip-details">
+                                <span>Start Date: {{ trip.start_date.strftime('%b %d, %Y') }}</span>
+                                <span>End Date: {{ trip.end_date.strftime('%b %d, %Y') }}</span>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">View Details →</a>
+                    </div>
+                {% else %}
+                    <div class="discover-empty-trips">
+                        <p>No public trips are available right now. Check back soon for new adventures.</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

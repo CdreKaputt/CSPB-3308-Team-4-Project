@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, session, redirect, url_for
 from app.utils.auth import required_logged_in
 from app.models.membership import Membership
+from app.models.trip import Trip
+from app import db
 
 main_bp = Blueprint("main", __name__)
 
@@ -32,3 +34,10 @@ def dashboard():
 @main_bp.route("/about")
 def about():
     return render_template("about.html")
+
+
+@main_bp.route("/discover")
+def discover():
+    # public_trips = db.session.query(Trip).filter_by(public=True).all()
+    public_trips = Trip.query.filter_by(public = True ).all()
+    return render_template("discover.html", trips=public_trips)
