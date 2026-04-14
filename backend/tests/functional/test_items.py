@@ -11,7 +11,8 @@ ITEM_ID = 1  # leader_item, first item created in init_database
 def test_packlist_get_authenticated(test_client, init_database, log_in_default_user):
     response = test_client.get(f"/items/{TRIP_ID}")
     assert response.status_code == 200
-    assert b"Packlist for Test Trip" in response.data
+    assert b"Test Trip" in response.data
+    assert b"Pack List" in response.data
     assert b"Test Items" in response.data  # category present on all seed items
 
 
