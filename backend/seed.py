@@ -13,7 +13,7 @@ from datetime import date, timedelta
 from faker import Faker # Import Faker
 from app import create_app
 from app.extensions import db
-from app.models import User, Trip, Expense, Membership, Events
+from app.models import User, Trip, Expense, Membership, Events, Item
 from werkzeug.security import generate_password_hash
 
 app = create_app("development")
@@ -98,8 +98,36 @@ def seed_database():
         db.session.commit()
         
         # Add memberships, events and expenses, one loop instead of two
-        print("--- Generating Memberships, Events and Add Expenses ---")
+        print("--- Generating Memberships, Events, Pack Items, and Add Expenses ---")
         
+        pack_items = [
+            ("Tent", "Shelter"),
+            ("Sleeping Bag", "Shelter"),
+            ("Sleeping Pad", "Shelter"),
+            ("Trekking Poles", "Gear"),
+            ("Headlamp", "Gear"),
+            ("Multi-tool", "Gear"),
+            ("First Aid Kit", "Safety"),
+            ("Sunscreen", "Safety"),
+            ("Rain Jacket", "Clothing"),
+            ("Hiking Boots", "Clothing"),
+            ("Wool Socks", "Clothing"),
+            ("Base Layer", "Clothing"),
+            ("Water Filter", "Hydration"),
+            ("Water Bottle", "Hydration"),
+            ("Hydration Pack", "Hydration"),
+            ("Trail Mix", "Food"),
+            ("Energy Bars", "Food"),
+            ("Camp Stove", "Food"),
+            ("Freeze Dried Meals", "Food"),
+            ("Bear Canister", "Safety"),
+            ("Map & Compass", "Navigation"),
+            ("Sunglasses", "Clothing"),
+            ("Trekking Hat", "Clothing"),
+            ("Dry Bags", "Gear"),
+            ("Camp Chair", "Comfort"),
+        ]
+
         expense_items = [
             "Lunch at the Airport", 
             "Hotel Booking", 
@@ -169,8 +197,24 @@ def seed_database():
                 )
                 db.session.add(ev)
                 
+            # add 4-8 pack list items per trip
+            selected_items = random.sample(pack_items, k=random.randint(4, 8))
+            for item_name, category in selected_items:
+                assigned_to = random.choice(trip_members)
+                creator = random.choice(trip_members)
+                i = Item(
+                    trip_id=trip.id,
+                    name=item_name,
+                    category=category,
+                    quantity=random.randint(1, 4),
+                    user_id=assigned_to.id,
+                    created_by=creator.id,
+                    is_completed=random.choice([True, False]),
+                )
+                db.session.add(i)
+
             db.session.commit()
-            
+
         print("--- Seeding Complete ---")
 
 if __name__ == "__main__":
