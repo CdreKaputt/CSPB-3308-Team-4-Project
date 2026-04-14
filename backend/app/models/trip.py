@@ -53,6 +53,12 @@ class Trip(db.Model):
         cascade='all, delete-orphan'
     )
 
+    items = db.relationship(
+        'Item',
+        backref='trip',
+        cascade='all, delete-orphan'
+    )
+
     def __init__(
         self,
         trip_name: str,
