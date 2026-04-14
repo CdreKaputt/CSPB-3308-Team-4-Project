@@ -40,6 +40,55 @@
     font-weight: bold;
 }
 
+.trip-member-management {
+    margin-bottom: 1.5rem;
+}
+
+.add-member-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.75rem;
+}
+
+.add-member-form label {
+    display: block;
+    width: 100%;
+    margin-left: 4px;
+    color: #333;
+}
+
+.add-member-form input {
+    flex: 1 1 240px;
+    padding: 12px 16px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+}
+
+.add-member-form input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.add-member-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-member-form button:hover {
+    background-color: #666;
+}
+
 /* details links layout */
 .trip-details-links {
     display: grid;
@@ -159,6 +208,23 @@
 .trip-show-buttons {
     display: flex;
     gap: 1rem;
+}
+
+.leave-trip-form > button {
+    text-decoration: none;
+    background: none;
+    color: #c17a00;
+    border: 1px solid #eee;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.leave-trip-form > button:hover {
+    background: rgba(193, 122, 0, 0.1);
 }
 
 .edit-trip-link {

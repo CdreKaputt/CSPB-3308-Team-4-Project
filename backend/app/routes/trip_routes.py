@@ -17,12 +17,17 @@ def trip_show(trip_id):
     # get members
     memberships = trip.memberships
     members = []
+    current_membership = None
     
     for membership in memberships:
         user = db.session.get(User, membership.member_id)
+        if not user:
+            continue
         members.append(user)
+        if membership.member_id == session['user']['id']:
+            current_membership = membership
     
-    return render_template('trip_show.html', trip=trip, members=members)
+    return render_template('trip_show.html', trip=trip, members=members, current_membership=current_membership)
     
 @trips_bp.route("/new", methods=['GET', 'POST'])
 def create_trip():
@@ -87,4 +92,62 @@ def delete_trip(trip_id):
     db.session.delete(trip)
     db.session.commit()
     
+    return redirect(url_for('main.dashboard'))
+
+
+@trips_bp.route('/<int:trip_id>/memberships', methods=['POST'])
+def add_member(trip_id):
+    trip = db.session.get(Trip, trip_id)
+    if not trip:
+        abort(404)
+
+    if trip.leader_id != session['user']['id']:
+        flash("Only the trip owner can add members.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    username = request.form.get('username', '').strip()
+    if not username:
+        flash("Please enter a username to add.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        flash("No user found with that username.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    existing_membership = Membership.query.filter_by(
+        trip_id=trip.id,
+        member_id=user.id
+    ).first()
+    if existing_membership:
+        flash("That user is already a member of this trip.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    db.session.add(Membership(trip_id=trip.id, member_id=user.id))
+    db.session.commit()
+    flash(f"{user.username} was added to the trip.", "success")
+    return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+
+@trips_bp.route('/memberships/delete/<int:membership_id>', methods=['POST'])
+def delete_membership(membership_id):
+    membership = db.session.get(Membership, membership_id)
+    if not membership:
+        abort(404)
+
+    trip = db.session.get(Trip, membership.trip_id)
+    if not trip:
+        abort(404)
+
+    if membership.member_id != session['user']['id']:
+        flash("You can only remove yourself from a trip.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    if trip.leader_id == session['user']['id']:
+        flash("Trip owners cannot remove themselves from their own trip.", "error")
+        return redirect(url_for('trips.trip_show', trip_id=trip.id))
+
+    db.session.delete(membership)
+    db.session.commit()
+    flash("You have been removed from the trip.", "success")
     return redirect(url_for('main.dashboard'))
