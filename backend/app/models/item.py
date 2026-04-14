@@ -1,5 +1,5 @@
-from typing import Optional 
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import Optional
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, Integer, Text, Date, DateTime, Boolean, ForeignKey
 from datetime import date, datetime, timezone
 from app.extensions import db
@@ -39,6 +39,9 @@ class Item(db.Model):
         default=lambda: datetime.now(timezone.utc),
         onupdate=lambda: datetime.now(timezone.utc),
     )
+
+    # relationships
+    assigned_to = relationship("User", foreign_keys=[user_id])
 
     def __init__(
         self,
