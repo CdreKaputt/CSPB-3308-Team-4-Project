@@ -1,0 +1,313 @@
+/* -----------------------------------------------
+   Packlist page
+----------------------------------------------- */
+
+.main-packlist-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+.main-packlist-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.main-packlist-heading h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.packlist-item-count {
+    color: #666;
+    font-weight: 500;
+}
+
+.packlist-container {
+    max-width: 100%;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 1.5rem;
+    background: white;
+}
+
+.packlist-heading h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.packlist-item-index {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.packlist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 1.25rem;
+    transition: transform 0.2s;
+}
+
+.packlist-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.item-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.item-status.done {
+    background-color: #d1e7dd;
+    color: #0a3622;
+}
+
+.item-status.pending {
+    background-color: #f0f0f0;
+    color: #888;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.packlist-item.completed .item-name {
+    color: #aaa;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.item-description {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.item-actions a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.item-actions a:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.item-delete-form button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.item-delete-form button:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.empty-packlist {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-style: italic;
+}
+
+.packlist-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.add-item-link {
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.add-item-link:hover {
+    background-color: #666;
+}
+
+.back-to-trip-link {
+    text-decoration: none;
+    color: #666;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.back-to-trip-link:hover {
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* -----------------------------------------------
+   Item forms
+----------------------------------------------- */
+
+.new-item-form-container,
+.edit-item-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-family: inherit;
+    color: inherit;
+    background-color: white;
+    padding: 1.5rem;
+}
+
+.new-item-form-container h2,
+.edit-item-form-container h2 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.new-item-form,
+.edit-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.new-item-form label,
+.edit-item-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: -0.75rem;
+    margin-left: 4px;
+}
+
+.new-item-form input,
+.new-item-form textarea,
+.edit-item-form input,
+.edit-item-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.new-item-form textarea,
+.edit-item-form textarea {
+    resize: vertical;
+}
+
+.new-item-form input:focus,
+.new-item-form textarea:focus,
+.edit-item-form input:focus,
+.edit-item-form textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem !important;
+    color: #666 !important;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    cursor: pointer;
+    accent-color: #333;
+}
+
+.new-item-form button[type="submit"],
+.edit-item-form button[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+.new-item-form button[type="submit"]:hover,
+.edit-item-form button[type="submit"]:hover {
+    background-color: #666;
+}
+
+.new-item-form a,
+.edit-item-form a {
+    text-decoration: none;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.new-item-form a:hover,
+.edit-item-form a:hover {
+    color: #333;
+    text-decoration: underline;
+}

@@ -18,7 +18,7 @@
 
             <div class="trip-details-links">
                 <a href="{{ url_for('events.trip_events', trip_id=trip.id)}}">Event Itinerary</a>
-                <a href="">Pack List (under construction)</a>
+                <a href="{{ url_for('items.packlist', trip_id=trip.id)}}">Pack List</a>
                 <a href="{{ url_for('expenses.trip_expenses', trip_id=trip.id)}}">Expense List</a>
             </div>
 

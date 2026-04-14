@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="new-item-form-container">
+    <h2>Add Item to {{ trip.trip_name }}</h2>
+
+    <form class="new-item-form" method="POST" action="{{ url_for('items.new_item') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="trip_id" value="{{ trip.id }}">
+
+        <label>Item Name</label>
+        <input type="text" name="name" placeholder="What do you need to bring?" required>
+
+        <label>Category</label>
+        <input type="text" name="category" placeholder="e.g. Clothing, Gear, Food">
+
+        <label>Description</label>
+        <textarea name="description" rows="3" placeholder="Any additional details?"></textarea>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" value="1" min="1">
+
+        <button type="submit">Add Item</button>
+        <a href="{{ url_for('items.packlist', trip_id=trip.id) }}">Cancel</a>
+    </form>
+</div>
+{% endblock %}

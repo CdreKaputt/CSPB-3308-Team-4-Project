@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="edit-item-form-container">
+    <h2>Edit {{ item.name }}</h2>
+
+    <form class="edit-item-form" method="POST" action="{{ url_for('items.edit_item', item_id=item.id) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label>Item Name</label>
+        <input type="text" name="name" value="{{ item.name }}" required>
+
+        <label>Category</label>
+        <input type="text" name="category" value="{{ item.category or '' }}">
+
+        <label>Description</label>
+        <textarea name="description" rows="3">{{ item.description or '' }}</textarea>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+
+        <label class="checkbox-label">
+            <input type="checkbox" name="is_completed" {% if item.is_completed %}checked{% endif %}>
+            Mark as completed
+        </label>
+
+        <button type="submit">Save Changes</button>
+        <a href="{{ url_for('items.packlist', trip_id=item.trip_id) }}">Cancel</a>
+    </form>
+</div>
+{% endblock %}
