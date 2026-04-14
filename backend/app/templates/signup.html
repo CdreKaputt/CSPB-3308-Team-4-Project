@@ -19,6 +19,12 @@
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
                     <button class="signup-button" type="submit">Sign Up</button>
                 </form>
+                <form class="demo-login-form" action="{{url_for('auth.login')}}" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="username" value="demouser">
+                    <input type="hidden" name="password" value="password">
+                    <button class="signup-button" type="submit">Demo Login</button>
+                </form>
                 <p>Already a member? <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a></p>
             </div>
         </div>
