@@ -1,29 +1,59 @@
 {% extends "home.html" %}
 
 {% block content %}
-<div class="packlist-container">
-    <header class="packlist-header">
-        <h2>Packlist for {{ trip.trip_name }}</h2>
-        <a href="{{ url_for('items.new_item', trip_id=trip.id) }}">+ Add Item</a>
-    </header>
-    <ul class="packlist-items">
-        {% for item in items %}
-        <li>
-            <span>{{ item.name }}</span>
-            {% if item.description %}<span>{{ item.description }}</span>{% endif %}
-            {% if item.category %}<span>{{ item.category }}</span>{% endif %}
-            <span>Qty: {{ item.quantity }}</span>
-            <span>{{ "Done" if item.is_completed else "Pending" }}</span>
-            <a href="{{ url_for('items.edit_item', item_id=item.id) }}">Edit</a>
-            <form action="{{ url_for('items.delete_item', item_id=item.id) }}" method="post" style="display:inline;">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <button type="submit">Remove</button>
-            </form>
-        </li>
-        {% else %}
-        <li>No items on this packlist yet.</li>
-        {% endfor %}
-    </ul>
-    <a href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">Back to trip</a>
+<div class="main-packlist-container">
+
+    <div class="main-packlist-heading">
+        <h2>{{ trip.trip_name }}</h2>
+        <div class="packlist-item-count">{{ items | length }} item{{ 's' if items | length != 1 }}</div>
+    </div>
+
+    <div class="packlist-container">
+        <div class="packlist-heading">
+            <h3>Pack List</h3>
+        </div>
+
+        <div class="packlist-item-index">
+            {% for item in items %}
+            <div class="packlist-item {{ 'completed' if item.is_completed }}">
+                <div class="item-info">
+                    <p class="item-name">{{ item.name }}</p>
+                    <span class="item-meta">
+                        {% if item.category %}{{ item.category }}{% endif %}
+                        {% if item.category and item.quantity %} - {% endif %}
+                        Qty: {{ item.quantity }}
+                        - Assigned to: {{ item.assigned_to.first_name }}
+                    </span>
+                    {% if item.description %}
+                    <span class="item-description">{{ item.description }}</span>
+                    {% endif %}
+                </div>
+                <div class="item-actions">
+                    <span class="item-status {{ 'done' if item.is_completed else 'pending' }}">
+                        {{ 'Done' if item.is_completed else 'Pending' }}
+                    </span>
+                    <a href="{{ url_for('items.edit_item', item_id=item.id) }}">Edit</a>
+                    <form class="item-delete-form" action="{{ url_for('items.delete_item', item_id=item.id) }}" method="post"
+                        onsubmit="return confirm('Remove this item?')">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit">Remove</button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <div class="empty-packlist">
+                <p>No items on this packlist yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <hr class="hr-divider">
+
+        <div class="packlist-buttons">
+            <a class="add-item-link" href="{{ url_for('items.new_item', trip_id=trip.id) }}">+ Add Item</a>
+            <a class="back-to-trip-link" href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">Back to Trip</a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
