@@ -13,7 +13,7 @@ from datetime import date, timedelta
 from faker import Faker # Import Faker
 from app import create_app
 from app.extensions import db
-from app.models import User, Trip, Expense, Membership
+from app.models import User, Trip, Expense, Membership, Events
 from werkzeug.security import generate_password_hash
 
 app = create_app("development")
@@ -57,10 +57,24 @@ def seed_database():
         # Add trips
         print("--- Generating Trips ---")
         # data for 5 trips
-        prefixes = ["Epic", "Annual", "Summer", "Weekend", "The Great"]
-        locations = ["Yellowstone", "Tokyo", "Berlin", "Moab", "NYC", "Alps"]
-        
+        prefixes = ["Epic", "Annual", "Summer", "Weekend", "The Great", "Hidden"]
+        locations = ["Yellowstone", "Tokyo", "Berlin", "Moab", "NYC", "Alps", "Chamonix"]
         trips = []
+        
+        # ensure demo user has 3 trips
+        for i in range(3):
+            start = fake.date_between(start_date='today', end_date='+1y')
+            t = Trip(
+                trip_name=f"{random.choice(prefixes)} {random.choice(locations)} Expedition",
+                leader_id=demo_user.id,
+                start_date=start,
+                end_date=start + timedelta(days=random.randint(4, 8)),
+                public=True
+            )
+            db.session.add(t)
+            trips.append(t)
+        
+        # add 5 more trips
         for _ in range(5):
             # trip leader and name
             leader = random.choice(users)
@@ -80,15 +94,31 @@ def seed_database():
             
             db.session.add(t)
             trips.append(t)
+            
         db.session.commit()
         
-        # Add memberships and expenses, one loop instead of two
-        print("--- Generating Memberships and Add Expenses ---")
+        # Add memberships, events and expenses, one loop instead of two
+        print("--- Generating Memberships, Events and Add Expenses ---")
         
         expense_items = [
-            "Lunch at the Airport", "Hotel Booking", "Rental Car", 
-            "Museum Pass", "Late Night Pizza", "Gas Station Snacks",
-            "Tour Guide Tip", "Souvenirs", "Parking Fee"
+            "Lunch at the Airport", 
+            "Hotel Booking", 
+            "Rental Car", 
+            "Museum Pass", 
+            "Late Night Pizza", 
+            "Gas Station Snacks",
+            "Tour Guide Tip", 
+            "Souvenirs", 
+            "Parking Fee"
+        ]
+        
+        event_types = [
+            "Sightseeing", 
+            "Dinner Reservation", 
+            "Guided Tour", 
+            "Hiking", 
+            "Skiing", 
+            "Photography Session"
         ]
         
         for trip in trips:
@@ -99,7 +129,10 @@ def seed_database():
             trip_leader = db.session.query(User).filter_by(id = trip.leader_id).first()
             if trip_leader not in trip_members:
                 trip_members.append(trip_leader)
-                
+            
+            if trip.leader_id == demo_user.id and demo_user not in trip_members:
+                trip_members.append(demo_user)
+            
             # add memberships
             for member in trip_members:
                 m = Membership(trip_id=trip.id, member_id=member.id)
@@ -119,6 +152,22 @@ def seed_database():
                     is_paid=random.choice([True, False])
                 )
                 db.session.add(e)
+                
+            # add 3-5 events pre trip
+            for _ in range(random.randint(3, 5)):
+                days_out = random.randint(0, (trip.end_date - trip.start_date).days)
+                event_date = trip.start_date + timedelta(days=days_out)
+                
+                event_name = f"{random.choice(event_types)}"
+                
+                ev = Events(
+                    event_name=event_name,
+                    description=f"{event_name} during the {trip.trip_name}",
+                    event_date=event_date,
+                    owner_id=trip.leader_id,
+                    trip_id=trip.id
+                )
+                db.session.add(ev)
                 
             db.session.commit()
             
