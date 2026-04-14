@@ -1,4 +1,5 @@
 from app.models import Trip
+from app.extensions import db
 
 TRIP_ID = 1
 
@@ -172,7 +173,7 @@ def test_trips_edit_post_valid(test_client, init_database, log_in_default_user):
     )
     assert response.status_code == 302
 
-    trip = Trip.query.get(TRIP_ID)
+    trip = db.session.get(Trip, TRIP_ID)
     assert trip.trip_name == "Updated Trip"
     assert str(trip.end_date) == "2026-04-10"
 
@@ -228,7 +229,7 @@ def test_trips_delete_as_non_member(test_client, init_database, log_in_non_membe
     assert response.status_code == 302
     assert response.headers["Location"] == "/trips"
 
-    trip = Trip.query.get(TRIP_ID)
+    trip = db.session.get(Trip, TRIP_ID)
     assert trip is not None
 
 
@@ -237,7 +238,7 @@ def test_trips_delete_as_member(test_client, init_database, log_in_member_user):
     assert response.status_code == 302
     assert response.headers["Location"] == f"/trips/{TRIP_ID}"
 
-    trip = Trip.query.get(TRIP_ID)
+    trip = db.session.get(Trip, TRIP_ID)
     assert trip is not None
 
 
@@ -246,7 +247,7 @@ def test_trips_delete_unauthenticated(test_client, init_database):
     assert response.status_code == 302
     assert response.headers["Location"] == "/login"
 
-    trip = Trip.query.get(TRIP_ID)
+    trip = db.session.get(Trip, TRIP_ID)
     assert trip is not None
 
 
@@ -255,5 +256,5 @@ def test_trips_delete_as_leader(test_client, init_database, log_in_default_user)
     assert response.status_code == 302
     assert response.headers["Location"] == "/trips"
 
-    trip = Trip.query.get(TRIP_ID)
+    trip = db.session.get(Trip, TRIP_ID)
     assert trip is None

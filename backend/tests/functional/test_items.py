@@ -1,4 +1,5 @@
 from app.models import Item
+from app.extensions import db
 
 TRIP_ID = 1
 ITEM_ID = 1  # leader_item, first item created in init_database
@@ -110,7 +111,7 @@ def test_edit_item_post_authenticated(test_client, init_database, log_in_default
     )
     assert response.status_code == 302
 
-    item = Item.query.get(ITEM_ID)
+    item = db.session.get(Item, ITEM_ID)
     assert item.name == "Updated Item Name"
     assert item.description == "Updated description"
     assert item.quantity == 3
@@ -129,7 +130,7 @@ def test_edit_item_post_unauthenticated(test_client, init_database):
     assert response.status_code == 302
     assert response.headers["Location"] == "/login"
 
-    item = Item.query.get(ITEM_ID)
+    item = db.session.get(Item, ITEM_ID)
     assert item.name != "Unauthorized Update"
 
 
@@ -142,7 +143,7 @@ def test_delete_item_unauthenticated(test_client, init_database):
     assert response.status_code == 302
     assert response.headers["Location"] == "/login"
 
-    item = Item.query.get(ITEM_ID)
+    item = db.session.get(Item, ITEM_ID)
     assert item is not None
 
 
@@ -152,5 +153,5 @@ def test_delete_item_authenticated(test_client, init_database, log_in_default_us
     response = test_client.post(f"/items/{ITEM_ID}/delete")
     assert response.status_code == 302
 
-    item = Item.query.get(ITEM_ID)
+    item = db.session.get(Item, ITEM_ID)
     assert item is None

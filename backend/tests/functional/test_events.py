@@ -1,4 +1,5 @@
 from app.models import Event
+from app.extensions import db
 
 EVENT_ID = 1
 
@@ -242,7 +243,7 @@ def test_events_delete_as_non_member(test_client, init_database, log_in_non_memb
     response = test_client.post(f"/events/delete/{EVENT_ID}")
     assert response.status_code == 401
 
-    trip = Event.query.get(EVENT_ID)
+    trip = db.session.get(Event, EVENT_ID)
     assert trip is not None
 
 
@@ -251,7 +252,7 @@ def test_events_delete_unauthenticated(test_client, init_database):
     assert response.status_code == 302
     assert response.headers["Location"] == "/login"
 
-    event = Event.query.get(EVENT_ID)
+    event = db.session.get(Event, EVENT_ID)
     assert event is not None
 
 
@@ -260,7 +261,7 @@ def test_events_delete_unauthenticated(test_client, init_database):
 #     assert response.status_code == 302
 #     assert response.headers["Location"] == "/trips"
 
-#     event = Event.query.get(EVENT_ID)
+#     event = db.session.get(Event, EVENT_ID)
 #     assert event is None
 
 
@@ -269,5 +270,5 @@ def test_events_delete_unauthenticated(test_client, init_database):
 #     assert response.status_code == 302
 #     assert response.headers["Location"] == f"/events/{EVENT_ID}"
 
-#     event = Event.query.get(EVENT_ID)
+#     event = db.session.get(Event, EVENT_ID)
 #     assert event is not None
