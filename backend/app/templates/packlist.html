@@ -1,5 +1,29 @@
 {% extends "home.html" %}
 
 {% block content %}
-    <h2>Packlist</h2>
+<div class="packlist-container">
+    <header class="packlist-header">
+        <h2>Packlist for {{ trip.trip_name }}</h2>
+        <a href="{{ url_for('items.new_item', trip_id=trip.id) }}">+ Add Item</a>
+    </header>
+    <ul class="packlist-items">
+        {% for item in items %}
+        <li>
+            <span>{{ item.name }}</span>
+            {% if item.description %}<span>{{ item.description }}</span>{% endif %}
+            {% if item.category %}<span>{{ item.category }}</span>{% endif %}
+            <span>Qty: {{ item.quantity }}</span>
+            <span>{{ "Done" if item.is_completed else "Pending" }}</span>
+            <a href="{{ url_for('items.edit_item', item_id=item.id) }}">Edit</a>
+            <form action="{{ url_for('items.delete_item', item_id=item.id) }}" method="post" style="display:inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit">Remove</button>
+            </form>
+        </li>
+        {% else %}
+        <li>No items on this packlist yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('trips.trip_show', trip_id=trip.id) }}">Back to trip</a>
+</div>
 {% endblock %}
