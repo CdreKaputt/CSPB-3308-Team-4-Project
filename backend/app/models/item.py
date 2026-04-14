@@ -13,9 +13,9 @@ class Item(db.Model):
         Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False
     )
     name: Mapped[str] = mapped_column(String(255), nullable=False)
-    description: Mapped[str] = mapped_column(Text)
+    description: Mapped[Optional[str]] = mapped_column(Text)
     quantity: Mapped[int] = mapped_column(Integer, default=1)
-    category: Mapped[str] = mapped_column(String(100))
+    category: Mapped[Optional[str]] = mapped_column(String(100))
     user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
     created_by: Mapped[int] = mapped_column(
         Integer, ForeignKey("users.id"), nullable=False
