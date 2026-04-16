@@ -92,11 +92,20 @@ The weekly status format was found to be useful for maintaining accountability a
 ---
 
 ## Individual Contributions This Week
-- **Aaron Brunswig:**  Completed user stories for the login and overview pages, and reviewed existing repo's code.
-- **Yan Gu:** Set up Slack Workspace and dedicated channel for team's communication; Self-assigned one user page to rebalance others workload   
-- **Spencer Iascone:**  Developed Cost Splitter user story and created wireframing using Figma based on user story. Created a requirements.txt file and drafted a database schema.
-- **Joshua Morrison:**  Focused on keeping up with the course content, and maintained meeting recordings. 
-- **London Walker:** Reviewed others user stories and provided feedback  
+**Aaron Brunswig:**  
+- Completed user stories for the login and overview pages, and reviewed existing repo's code.
+
+**Yan Gu:** 
+- Set up Slack Workspace and dedicated channel for team's communication; Self-assigned one user page to rebalance others workload  
+
+**Spencer Iascone:**  
+- Developed Cost Splitter user story and created wireframing using Figma based on user story. Created a requirements.txt file and drafted a database schema.
+
+**Joshua Morrison:**  
+- Focused on keeping up with the course content, and maintained meeting recordings. 
+
+**London Walker:** 
+- Reviewed others user stories and provided feedback  
 
 ---
 

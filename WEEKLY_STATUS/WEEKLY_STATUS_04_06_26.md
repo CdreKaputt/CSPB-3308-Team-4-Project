@@ -96,25 +96,30 @@ The team is successfully pivoting from individual feature development to full-ap
 
 ## Stand Up/ndividual Contributions This Week
 **Aaron Brunswig:** 
-    + What I did this week: Merged backend test suite to main; created test seed data; implemented authentication state tests.
-    + What I plan to do next week: Expand test coverage to include Expenses and Events; verify non-member access prevention.
-    + Roadblocks: Recovering from illness and balancing heavy overtime at work.
+
++ What I did this week: Merged backend test suite to main; created test seed data; implemented authentication state tests.
++ What I plan to do next week: Expand test coverage to include Expenses and Events; verify non-member access prevention.
++ Roadblocks: Recovering from illness and balancing heavy overtime at work.
+
 **Yan Gu:**
-    + What I did this week: N/A
-    + What I plan to do next week: N/A
-    + Roadblocks: under the weather
++ What I did this week: N/A
++ What I plan to do next week: N/A
++ Roadblocks: under the weather
+
 **Spencer Iascone:**
-    + What I did this week: Built Expense CRUD logic; created database seeding script (Faker); updated session logic to include User IDs.
-    + What I plan to do next week: Style expense/trip pages; build Trip Detail templates; draft presentation slides.
-    + Roadblocks: Balancing heavy client workload and upcoming out-of-state move.
++ What I did this week: Built Expense CRUD logic; created database seeding script (Faker); updated session logic to include User IDs.
++ What I plan to do next week: Style expense/trip pages; build Trip Detail templates; draft presentation slides.
++ Roadblocks: Balancing heavy client workload and upcoming out-of-state move.
+
 **Joshua Morrison:** 
-    + What I did this week: N/A
-    + What I plan to do next week: N/A
-    + Roadblocks: Busy with starting new job and other class
++ What I did this week: N/A
++ What I plan to do next week: N/A
++ Roadblocks: Busy with starting new job and other class
+
 **London Walker:** 
-    + What I did this week: Finished Events routes and templates; handled weekly meeting notes.
-    + What I plan to do next week: Implement the "Items" (Packing List) module; verify Event functionality; draft status report.
-    + Roadblocks: Getting app to run properly
++ What I did this week: Finished Events routes and templates; handled weekly meeting notes.
++ What I plan to do next week: Implement the "Items" (Packing List) module; verify Event functionality; draft status report.
++ Roadblocks: Getting app to run properly
 
 ---
 

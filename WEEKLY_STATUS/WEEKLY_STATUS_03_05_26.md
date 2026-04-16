@@ -114,6 +114,7 @@ technical familiarity.
   complete Login page write-up; finalize middleware.
 + Roadblocks: Focusing on clarifying data requirements for the 
   Overview/Dashboard page.
+  
 **Yan Gu:**
 + What I did this week: Managed Milestone 3 submission; researched Flask and 
   database schemas to align with project requirements; managed the meeting agenda.
@@ -121,6 +122,7 @@ technical familiarity.
   Spencer for a user journey walkthrough.
 + Roadblocks: Initial overwhelm with Flask concepts, but currently catching 
     up with course content. 
+
 **Spencer Iascone:**
 + What I did this week: Created Markdown templates for page write-ups; initiated 
   the Team Wiki; finished Cost Splitter user stories; reviewed backend boilerplate 
@@ -129,12 +131,14 @@ technical familiarity.
   the Wiki; build temporary testing templates for visual interaction; lead a 
   route-finalization session.
 + Roadblocks: Busy work week, but schedule is stable moving forward.
+
 **Joshua Morrison:** 
 + What I did this week: Focused on onboarding to Figma and Trello; started 
   hand-drawing mockups and drafting Pack List stories.
 + What I plan to do next week: Finish wireframes in Figma using the tools 
   learned today; complete individual page write-up.
 + Roadblocks: Familiarizing self with new design platforms (Figma/Trello).
+
 **London Walker:** 
 + What I did this week: Completed Itinerary user stories and initial wireframes; 
   reviewed peer stories; coordinated with Aaron/Spencer on backend-to-frontend 

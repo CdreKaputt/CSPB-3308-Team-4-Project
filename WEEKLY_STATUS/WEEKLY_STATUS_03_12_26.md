@@ -113,6 +113,7 @@ with a clear roadmap for individual contributions over the coming weeks.
 + What I plan to do next week: Create the file structure for remaining 
   routes/models and implement backend logic for trips.
 + Roadblocks: Time constraints and minor Flask-specific implementation hurdles.
+
 **Yan Gu:**
 + What I did this week: Focused on Lab 7 (Database) and Lab 8 (HTML/CSS) to 
   prepare for Milestone 5 and the overview page design.
@@ -120,6 +121,7 @@ with a clear roadmap for individual contributions over the coming weeks.
   options for Spring Break and begin implementing the Overview page.
 + Roadblocks: Managing dependencies between the overview page and other database 
   tables.
+
 **Spencer Iascone:**
 + What I did this week: Built a React prototype for testing the backend, 
   demonstrated full auth flow, and drafted the initial database schema in the 
@@ -127,12 +129,14 @@ with a clear roadmap for individual contributions over the coming weeks.
 + What I plan to do next week: Refactor backend routes for Jinja2 templates and 
   create step-by-step documentation for the team.
 + Roadblocks: Heavy workload next week, though no new school material.
+
 **Joshua Morrison:** 
 + What I did this week: Developed wireframes for the pack list and recorded the 
   weekly meeting/transcript.
 + What I plan to do next week: Lead the SQL schema design (Milestone 5) and 
   serve as Scrum Master.
 + Roadblocks: None reported.
+
 **London Walker:** 
 + What I did this week: Reviewed the backend branch and wiki 
   routes to inform design page work (reported via email).

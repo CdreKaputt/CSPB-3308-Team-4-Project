@@ -97,24 +97,30 @@ The team is successfully balancing individual academic workloads with final proj
 ---
 
 ## Stand Up/ndividual Contributions This Week
-**Aaron Brunswig:** + What I did this week: Wrapped up tests for the events and trips features.
-    + What I plan to do next week: Knock out models and routes for the items feature.
-    + Roadblocks: No major blockers.
+**Aaron Brunswig:** 
++ What I did this week: Wrapped up tests for the events and trips features.
++ What I plan to do next week: Knock out models and routes for the items feature.
++ Roadblocks: No major blockers.
+
 **Yan Gu:**
-    + What I did this week: Attended CU CSPB event; began work on Discover page.
-    + What I plan to do next week: Wrap up Discover page feature and review presentation slides for the demo.
-    + Roadblocks: n/a
++ What I did this week: Attended CU CSPB event; began work on Discover page.
++ What I plan to do next week: Wrap up Discover page feature and review presentation slides for the demo.
++ Roadblocks: n/a
+
 **Spencer Iascone:**
-    + What I did this week: Complete Expenses feature, set up presentation slide deck and begin trip feature
-    + What I plan to do next week: complete trip feature (model, routes, templates), wire up to events, expenses and items feature
-    + Roadblocks: n/a
++ What I did this week: Complete Expenses feature, set up presentation slide deck and begin trip feature
++ What I plan to do next week: complete trip feature (model, routes, templates), wire up to events, expenses and items feature
++ Roadblocks: n/a
+
 **Joshua Morrison:** 
-    + What I did this week: Worked on final projects for the semester.
-    + What I plan to do next week: Review slide deck and prepare for Milestone 7 demonstration.
-    + Roadblocks: n/a
-**London Walker:** + What I did this week: Updated meeting notes and completed core functionality of the events feature.
-    + What I plan to do next week: Fix bugs on event delete/edit and finalize styling for Friday PR.
-    + Roadblocks: Minor bugs identified in delete/edit functionality.  
++ What I did this week: Worked on final projects for the semester.
++ What I plan to do next week: Review slide deck and prepare for Milestone 7 demonstration.
++ Roadblocks: n/a
+
+**London Walker:** 
++ What I did this week: Updated meeting notes and completed core functionality of the events feature.
++ What I plan to do next week: Fix bugs on event delete/edit and finalize styling for Friday PR.
++ Roadblocks: Minor bugs identified in delete/edit functionality.  
 
 ---
 

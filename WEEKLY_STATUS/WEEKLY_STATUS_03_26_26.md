@@ -101,12 +101,14 @@ The team reported:
   rotues, models or tests
 + Roadblocks: No major hangups after solving testing library concerns. How do we
   want routes foreach page
+
 **Yan Gu:**
 + What I did this week: Wrapping up lab 8, get started on JS, upskiling started 
   on milestone 6. 
 + What I plan to do next week: Catch up on overview page, think about how to 
   design overview page, check on trello
 + Roadblocks: Started testing claud code, agentic coding
+
 **Spencer Iascone:**
 + What I did this week: Restructured our meeting notes, talked professor Guinn
   about project scope and needed features, pushed auth views over break
@@ -114,11 +116,13 @@ The team reported:
   trello), add cards to trello for models, views and tests as well as routes.
   Can float around on templates or routes or models. 
 + Roadblocks: Catch up on course materials
+
 **Joshua Morrison:** 
 + What I did this week: Putting together the milestone 5 schema document
 + What I plan to do next week: Figure out next steps 
 + Roadblocks: Course work, not sure on next responsibility, figure outpack list 
   pieces
+  
 **London Walker:** 
 + What I did this week: Started on trips model, working on events model
 + What I plan to do next week: Ploish up events model
