@@ -1,6 +1,6 @@
 # Flake Setup and Running Instructions
 
-This guide provides step-by-step instructions for setting up and runing Flak on
+This guide provides step-by-step instructions for setting up and running Flak on
 your local development environment.
 
 ## 1. Clone this Repository
@@ -26,7 +26,7 @@ your local development environment.
 - active the environment
   - ensure you have execute permissions to active your virtual environment
     - run `chmod +x venv/bin/activate`
-  - run `source ./venv/bin/acticate`
+  - run `source ./venv/bin/activate`
 - install dependencies
   - run `pip install -r requirements.txt`
 
