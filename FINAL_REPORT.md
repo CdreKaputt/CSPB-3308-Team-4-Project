@@ -78,14 +78,14 @@ Version Control: The team used GitHub version control function for team collabor
 - pull request and review process in place
 - regular branch clear up for version hygien
 
-## Pages That Access Database Information (MOre pages to be added)
+## Pages That Access Database Information
 
 - Login: users
 - Dashboard: users, trips
 - Expenses: expenses, trips
 - Events: events, trips, users
 - Discover: users, trips
-- Item:
+- Item: item, users
 
 ## Page Data Access Tests (High-Level) (More use cases to be added)
 
@@ -124,6 +124,7 @@ No data is modified.
 
 ---
 ### Use case name
+Login/Authentication: Aaron
 
 ### Description 
 
@@ -143,6 +144,7 @@ No data is modified.
 
 ---
 ### Use case name
+Item: Aaron
 
 ### Description 
 
@@ -159,7 +161,67 @@ No data is modified.
 ### Notes
 
 ### Post-conditions
+
 ---
+### Use case name
+Event: London
+
+### Description 
+
+### Pre-conditions
+
+### Test steps
+
+### Expected result
+
+### Actual result
+
+### Status
+
+### Notes
+
+### Post-conditions
+
+---
+### Use case name
+Discover: Yan
+
+### Description 
+
+### Pre-conditions
+
+### Test steps
+
+### Expected result
+
+### Actual result
+
+### Status
+
+### Notes
+
+### Post-conditions
+
+---
+### Use case name
+Expense: Yan
+
+### Description 
+
+### Pre-conditions
+
+### Test steps
+
+### Expected result
+
+### Actual result
+
+### Status
+
+### Notes
+
+### Post-conditions
+
 ## Reflection
 
 This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-stack web app.
