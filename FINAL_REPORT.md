@@ -3,7 +3,7 @@
 ## Milestone 8: Final Report Submission
 
 ## Project Title
-Flake - A Trip Planner for Item Tracking
+Flake - A Trip Planner for Accountability Tracking
 
 ## Team Members
 - Aaron Brunswit
@@ -16,8 +16,8 @@ Flake - A Trip Planner for Item Tracking
 
 - Project tracker (instructor can access): [Trello Board](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - Version control repository (instructors have access): [GitHub Repo](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
-- 5-minute customer demo video: [Demo Video](To be added)
-- Public deployment site: [StudySync Deployment](To be added)
+- 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1_Sa3SQUnarWKKaqpa3WdMHV6OC2eYeHq/view?usp=sharing)
+- Public deployment site: TBD
 
 ## Repository Readiness
 
@@ -54,9 +54,6 @@ The repository contains the following required files and assets:
 - Customer-facing demo video
 
 ### What We Were in the Middle of Implementing
-- Trip membership
-  - trip creators can add members
-  - trip members can leave trips
 - Pack List
 
 ### What We Planned for the Future
@@ -81,14 +78,16 @@ Version Control: The team used GitHub version control function for team collabor
 - pull request and review process in place
 - regular branch clear up for version hygien
 
-## Pages That Access Database Information (To be revised)
+## Pages That Access Database Information (MOre pages to be added)
 
 - Login: users
 - Dashboard: users, trips
 - Expenses: expenses, trips
 - Events: events, trips, users
+- Discover: users, trips
+- Item:
 
-## Page Data Access Tests (High-Level) (To be revised)
+## Page Data Access Tests (High-Level) (More use cases to be added)
 
 ### Use case name
 Dashboard loads correct data for the logged-in user
@@ -123,6 +122,44 @@ N/A
 ### Post-conditions
 No data is modified.
 
+---
+### Use case name
+
+### Description 
+
+### Pre-conditions
+
+### Test steps
+
+### Expected result
+
+### Actual result
+
+### Status
+
+### Notes
+
+### Post-conditions
+
+---
+### Use case name
+
+### Description 
+
+### Pre-conditions
+
+### Test steps
+
+### Expected result
+
+### Actual result
+
+### Status
+
+### Notes
+
+### Post-conditions
+---
 ## Reflection
 
 This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-stack web app.
