@@ -189,3 +189,5 @@ Structure:
 Project management will be tracked through the use of a Trello board.
 
 **Tracking tool link:** [Flake Trello Board](https://trello.com/invite/b/6995f786163d3081fde6800c/ATTIb190fcd63beeca8bed233c0896ba1acaC325182C/flake-cspb-3308-team-4-project)
+
+## Setup: [How to file](https://github.com/CdreKaputt/CSPB-3308-Team-4-Project/blob/main/SETUP.md)
