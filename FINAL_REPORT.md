@@ -124,43 +124,98 @@ No data is modified.
 
 ---
 ### Use case name
-Login/Authentication: Aaron
 
-### Description 
+Login page
+
+### Description
+
+Verify the login page and the signup pages function as expected
 
 ### Pre-conditions
 
+- User is not logged in
+
 ### Test steps
+
+- From login page, hit “Sign Up” link
+- Fill out form to create new user
+- Once redirected back to login, use the new user username and password to log in.
+- Confirm that login is successful and user is redirected to /dashboard page.
 
 ### Expected result
 
+- Completing the new user form should submit and redirect user back to login page.
+- Filling in new user username and password should allow the user to log in.
+- Once logged in, the user should be redirected to the dashboard page.
+
 ### Actual result
+
+- New user created successfully
+- User is able to log in with the new username and password.
+- User is redirected to the dashboard as expected
 
 ### Status
 
+Pass
+
 ### Notes
 
+- The alert message displayed on the log in page after creating a user does not automatically disappear. Refreshing the page will remove it but it shouldn’t prevent the user form filling out the login form and logging in correctly.
+
 ### Post-conditions
+
+- New user added to the database  
 
 ---
 ### Use case name
-Item: Aaron
 
-### Description 
+Pack List page
+
+### Description
+
+Verify that the Pack List page correctly displays items associated with a trip and that the new/edit item forms work as intended.
 
 ### Pre-conditions
 
+- User account exists
+- User is logged in
+- User belongs to at least one trip
+
 ### Test steps
 
+- Create new trip
+- From trip dashboard navigate to the Pack List page
+- Create new item and observe status
+- Edit item to change name and status to completed
+- Delete item
+
 ### Expected result
+- A new item should be created with the values provided in the new item form.
+- The item should be assigned to the current user
+- Item should show a “Pending” badge.
+- After editing the values and setting the item to complete, the item listed on the Pack List page should use the updated values, be grayed out, and show the “Done” badge on the right indicating that that item has been sourced.
+- The delete button should remove the item from the packlist
 
 ### Actual result
+- Item is created with the expected values and pending badge
+- Item is assigned to current user
+- Item values update correctly after editing item.
+- Marking item as complete results in grayed out text and “Done” badge
+- Delete functions as expected
 
 ### Status
 
+Pass
+
 ### Notes
 
+- There is currently no advanced logic checking the permissions of the current user other than ensuring they are logged in when creating/editing/deleting an item. In theory, any logged in user that is not a member of the trip could still access this page and forms and make changes. This is not an oversight but complex user authorization is a stretch goal and will be added in a later version.
+- Currently there is no way to reassign an item to another member, but this will also be added at a later time.
+
 ### Post-conditions
+
+- New test trip added and saved in database.
+- Item added then removed from database.  
 
 ---
 ### Use case name
