@@ -54,7 +54,8 @@ The repository contains the following required files and assets:
 - Customer-facing demo video
 
 ### What We Were in the Middle of Implementing
-- Pack List
+- MVP Functions are all ready
+- Use React framework for frontend
 
 ### What We Planned for the Future
 - Auto-reassign cost when a member flakes
@@ -63,7 +64,8 @@ The repository contains the following required files and assets:
 - Use API based backend
 
 ### Known Problems and Limitations
-- TBD: What's not optimized
+- User experience is not fully consistent. The event page has a slight different look and feel from other pages.
+- The confirmation pop-up is a system dialogue that has system message.
  
 ## System Overview
 
@@ -324,6 +326,7 @@ Pass
 The user experience of Delete confirmation dialogue can be improved. Now it's a system dialogue starts with "127.0.0.1:8000 says ..."
 ### Post-conditions
 Expense data has been updated    
+
 ## Reflection
 
 This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-stack web app.
@@ -333,5 +336,5 @@ Key takeaways:
 - Defining clear scope was helpful to keep us on track.
 - Having scrum master responsible for Weekly standup meeting helped the team coordinate tasks well.
 - Regular slack messages helped us make sure we were all on the same page.
-
+- Make critical tehcnical stack decision helps unblock the team to make continuous progress 
 
