@@ -17,7 +17,7 @@ Flake - A Trip Planner for Accountability Tracking
 - Project tracker (instructor can access): [Trello Board](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - Version control repository (instructors have access): [GitHub Repo](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1_Sa3SQUnarWKKaqpa3WdMHV6OC2eYeHq/view?usp=sharing)
-- Public deployment site: See instructions for local host
+- Deployment: See "Getting the project running" in auth_views.md
 
 ## Repository Readiness
 
@@ -45,11 +45,11 @@ The repository contains the following required files and assets:
   - View an existing trip
   - Add/edit an event associated with a trip
   - Add/edit an expense associated with a trip
-  - Other work in progress
+  - Discover public trips
 - Frontend with a consistent navigation flow
 - Backend with REST endpoints
 - Database with relational schema in PostgreSQL
-- Public deployment of the application
+- Local deployment of the application with instructions
 - Project presentation slides
 - Customer-facing demo video
 
@@ -64,7 +64,7 @@ The repository contains the following required files and assets:
 - Use API based backend
 
 ### Known Problems and Limitations
-- User experience is not fully consistent. The event page has a slight different look and feel from other pages.
+- User experience style is not fully consistent. The event page has a slight different look and feel from other pages.
 - The confirmation pop-up is a system dialogue that has system message.
  
 ## System Overview
@@ -89,7 +89,7 @@ Version Control: The team used GitHub version control function for team collabor
 - Discover: users, trips
 - Item: item, users
 
-## Page Data Access Tests (High-Level) (More use cases to be added)
+## Page Data Access Tests (High-Level)
 
 ### Use case name
 Dashboard loads correct data for the logged-in user
