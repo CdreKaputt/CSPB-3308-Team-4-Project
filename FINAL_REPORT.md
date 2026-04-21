@@ -17,7 +17,7 @@ Flake - A Trip Planner for Accountability Tracking
 - Project tracker (instructor can access): [Trello Board](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - Version control repository (instructors have access): [GitHub Repo](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1_Sa3SQUnarWKKaqpa3WdMHV6OC2eYeHq/view?usp=sharing)
-- Public deployment site: TBD
+- Public deployment site: See instructions for local host
 
 ## Repository Readiness
 
@@ -245,56 +245,93 @@ Pass
 ### Notes
 Since user can see any public trips, it is not limited to only trip members  
 ### Post-conditions
+Event data is modified  
+
+---
+### Use case name
+Discover page
+
+### Description 
+Verify the discover page correctly shows all public trips  
+### Pre-conditions
+- User account exists 
+- At least one public trip exist      
+### Test steps  
+1. User log in
+2. Click on "Explore Public Trips" button
+3. The link successfully redirects user to the discover page
+### Expected result
+- A full list of all public trips are shown
+- Each trip is contained in a card
+- Trip name, description and date are displayed  
+### Actual result
+- Discover page corretly loaded
+- All public trips are listed
+- Each trip contained in a card has trip name, description and date correctly displayed    
+
+### Status
+Pass
+### Notes
+None public trips are not listed  
+### Post-conditions
 No data is modified  
 
 ---
 ### Use case name
-Discover: Yan
-
+Expense page  
 ### Description 
+Verify the user can add and edit expenses associated with a trip
 
 ### Pre-conditions
-
+- User has logged in
+- User is viewing a trip details
+- Expense List button successfully displays  
 ### Test steps
-
+- Click on the "Expense List" button
+- The link redirects user to the expenses page
+- Click "Add an Expense" button to create a new expense
+  - Provide a Description for a new expense
+  - Provide the Amount for that new expense
+  - Click "Add Expense" to save that expense
+- Click on "Back to Trip Page" to go back
+- Click "Edit" to update an expense
+  - Update the Description
+  - Update the Amount
+  - Tick the "Paid" box
+- Click "Delete" to delete an expense
+  - Click "Cancel" to cancel the deletion
+  - Click "OK" to confirm the deletion
 ### Expected result
-
+- The expense page successfully loads a table of expense
+  - Each row has Description, PayerID, Amount, Paid?, Date Added fields
+  - Each row has action button of Edit and Delete
+- The "Add an Expense" button redirects user to a new page
+  - The add expense page allows user to input Expense Description and Amount
+  - The "Add Expense" button allows user to save that new expense
+  - Once done, redirect user back to expense page
+- The "Edit" link redirects user to the expense detail page
+  - A checkbox of "Paid" appears
+  - "Update Expense" button saves the expense change
+  - Cancel redirects user back to the expense list page 
+- The "Delete" link pop up a confirmation box
+  - The "Cancel" does nothing to the expense
+  - The "OK" deletes the expense 
 ### Actual result
-
+Same as expected  
 ### Status
-
+Pass
 ### Notes
-
+The user experience of Delete confirmation dialogue can be improved. Now it's a system dialogue starts with "127.0.0.1:8000 says ..."
 ### Post-conditions
-
----
-### Use case name
-Expense: Yan
-
-### Description 
-
-### Pre-conditions
-
-### Test steps
-
-### Expected result
-
-### Actual result
-
-### Status
-
-### Notes
-
-### Post-conditions
-
+Expense data has been updated    
 ## Reflection
 
 This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-stack web app.
 We natigated through all stages of software development lifecycle, including ideation, experince design, system architecturing, implementation, testing, deploying.
 
-Key takeaways: (to be revised)
-- Creating a defined scope with a wiki was helpful to keep us on track.
-- Weekly check-ins helped make sure we were all on the same page.
-- *Deployment and CI/CD work early paid off during final integration.
+Key takeaways:  
+- Defining clear scope was helpful to keep us on track.
+- Having scrum master responsible for Weekly standup meeting helped the team coordinate tasks well.
+- Regular slack messages helped us make sure we were all on the same page.
 
 
