@@ -164,23 +164,33 @@ Item: Aaron
 
 ---
 ### Use case name
-Event: London
-
+Events loads correct information for logged in user  
 ### Description 
-
+Verify the events page displays events for logged in user’s trip  
 ### Pre-conditions
-
+- User account exists 
+- Trip exists
+- User has access to trip page
+- At least one event exists  
 ### Test steps
-
+1. Log in and navigate to the trip dashboard
+2. Select a trip
+3. Navigate to itinerary from trip page
+4. Observe list of events
+5. Click on event to navigate to event overview
+6. Observe event details  
 ### Expected result
-
+- Event page shows the trip events associated with the trip
+- Event overview shows the event details including the date, title, and description  
 ### Actual result
-
+- Event page correctly shows the trip events for the user’s trip
+- Event overview loads the correct event information  
 ### Status
-
+Pass  
 ### Notes
-
+Since user can see any public trips, it is not limited to only trip members  
 ### Post-conditions
+No data is modified  
 
 ---
 ### Use case name
