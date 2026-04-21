@@ -17,7 +17,7 @@ Flake - A Trip Planner for Accountability Tracking
 - Project tracker (instructor can access): [Trello Board](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - Version control repository (instructors have access): [GitHub Repo](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
 - 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1_Sa3SQUnarWKKaqpa3WdMHV6OC2eYeHq/view?usp=sharing)
-- Deployment: See "Getting the project running" in auth_views.md
+- Deployment: See "SETUP.md"
 
 ## Repository Readiness
 
