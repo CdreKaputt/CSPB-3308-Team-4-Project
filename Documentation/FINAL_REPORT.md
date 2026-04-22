@@ -25,15 +25,16 @@ All team members have verified that their latest work is pushed to the remote re
 
 The repository contains the following required files and assets:
 
-- README.md
-- WEEKLY_STATUS.md
-- PAGE_TESTING.md
-- SQL_TESTING.md 
-- FINAL_REPORT.md
+- `README.md` -> Located in root directory 
+- `WEEKLY_STATUS.md` -> Located in `WEEKLY_STATUS/` directroy
+- `PAGE_TESTING.md` -> Located in `Documentation/` directory
+- `SQL_TESTING.md` -> Located in `Documentation/` directory
+- `FINAL_REPORT.md` -> Located in `Documentation/` directory
 - Project presentation files from the Presentation Milestone
-- Video of demo
-- Source code (frontend and backend)
-- Test cases (unit and integration)
+    - Video of demo -> Located in `PRESENTATION_FILES/` directory
+    - Demo Slide Deck -> Located in `PRESENTATION_FILES/` directory
+- Source code (frontend and backend) -> located in `backend/` directory
+- Test cases (unit and integration) -> located in `backend/tests/` directory
 - Source documentation and auto-generated documentation files
 
 ## Final Status Report
