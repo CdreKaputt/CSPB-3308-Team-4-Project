@@ -55,7 +55,8 @@ The repository contains the following required files and assets:
 
 ### What We Were in the Middle of Implementing
 - MVP Functions are all ready
-- Use React framework for frontend
+- Event Attendee functionality is in progress 
+- Explore React framework for frontend
 
 ### What We Planned for the Future
 - Auto-reassign cost when a member flakes
