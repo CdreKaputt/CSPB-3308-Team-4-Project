@@ -233,15 +233,26 @@ Verify the events page displays events for logged in user’s trip
 1. Log in and navigate to the trip dashboard
 2. Select a trip
 3. Navigate to itinerary from trip page
-4. Observe list of events
-5. Click on event to navigate to event overview
-6. Observe event details  
+4. Click "new event" and create new event
+5. Observe list of events
+6. Click on event to navigate to event overview
+7. Observe event details
+8. Click "edit event"
+9. Edit the event date
+10. Save the event and observe the updated event
+
 ### Expected result
 - Event page shows the trip events associated with the trip
-- Event overview shows the event details including the date, title, and description  
+- Event overview shows the event details including the date, title, and description
+- New event creates an event
+- Edit event to update the item details
+  
 ### Actual result
 - Event page correctly shows the trip events for the user’s trip
 - Event overview loads the correct event information  
+- New event creates a new event which shows up on the events page
+- Edit event reflects the new event details
+
 ### Status
 Pass  
 ### Notes
