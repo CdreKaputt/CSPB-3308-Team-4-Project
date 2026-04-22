@@ -347,5 +347,5 @@ Key takeaways:
 - Defining clear scope was helpful to keep us on track.
 - Having scrum master responsible for Weekly standup meeting helped the team coordinate tasks well.
 - Regular slack messages helped us make sure we were all on the same page.
-- Make critical tehcnical stack decision helps unblock the team to make continuous progress 
+- Make timely technical stack shift decision helps unblock the team to make continuous progress 
 
