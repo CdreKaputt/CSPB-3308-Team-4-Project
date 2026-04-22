@@ -28,7 +28,7 @@ The repository contains the following required files and assets:
 - README.md
 - WEEKLY_STATUS.md
 - PAGE_TESTING.md
-- SQL_TESTING.md
+- SQL_TESTING.md 
 - FINAL_REPORT.md
 - Project presentation files from the Presentation Milestone
 - Video of demo
@@ -61,7 +61,7 @@ The repository contains the following required files and assets:
 
 ### What We Planned for the Future
 - Auto-reassign cost when a member flakes
-- auto-notification of dropped pack items when a member flakes
+- Auto-notification of dropped pack items when a member flakes
 - Apply React framework to the frontend
 - Use API based backend
 
@@ -90,7 +90,7 @@ Version Control: The team used GitHub version control function for team collabor
 - Expenses: expenses, trips
 - Events: events, trips, users
 - Discover: users, trips
-- Item: item, users
+- Item: items, users
 
 ## Page Data Access Tests (High-Level)
 
