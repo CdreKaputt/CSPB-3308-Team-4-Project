@@ -15,7 +15,7 @@ Flake - A Trip Planner for Accountability Tracking
 ## Required Links
 
 - Project tracker (instructor can access): [Trello Board](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
-- Version control repository (instructors have access): [GitHub Repo](https://trello.com/b/3vxc9cLW/flake-cspb-3308-team-4-project)
+- Version control repository (instructors have access): [GitHub Repo](https://github.com/CdreKaputt/CSPB-3308-Team-4-Project)
 - 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1_Sa3SQUnarWKKaqpa3WdMHV6OC2eYeHq/view?usp=sharing)
 - Deployment: See "SETUP.md"
 
@@ -40,12 +40,13 @@ The repository contains the following required files and assets:
 
 ### What We Completed
 - User journey working MVP including:
-  - User Sign up and login
-  - Create a new trip
-  - View an existing trip
-  - Add/edit an event associated with a trip
-  - Add/edit an expense associated with a trip
-  - Discover public trips
+  * User Authorization (Signup, Login, Logout)
+  * Trip Feature: Users can create, view, edit and delete trips
+  * Memberships Feature: Trip leaders can add members to trips, members can leave trips
+  * Events Feature: Users can create, view, edit and delete events for a trip
+  * Pack List Feature: Users can create, view, edit and delete items for a trip
+  * Expenses Feature: Users can create, view, edit and delete expenses for a trip
+  * Discover Page: Users can view public trips and explore their events, pack lists and expenses
 - Frontend with a consistent navigation flow
 - Backend with REST endpoints
 - Database with relational schema in PostgreSQL
@@ -84,6 +85,7 @@ Version Control: The team used GitHub version control function for team collabor
 ## Pages That Access Database Information
 
 - Login: users
+- Sign up: users
 - Dashboard: users, trips
 - Expenses: expenses, trips
 - Events: events, trips, users
@@ -342,7 +344,7 @@ Expense data has been updated
 ## Reflection
 
 This Flake project gives everyone on Team 4 a 0-to-1 experience building a full-stack web app.
-We natigated through all stages of software development lifecycle, including ideation, experince design, system architecturing, implementation, testing, deploying.
+We navigated through all stages of software development lifecycle, including ideation, experince design, system architecturing, implementation, testing, deploying.
 
 Key takeaways:  
 - Defining clear scope was helpful to keep us on track.
